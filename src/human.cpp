@@ -95,13 +95,13 @@ void Human ::spawn() {
         if (y - 1 >= 0 && city->getOrganism(x, y - 1) == nullptr) {
             direction.push_back(NORTH);
         }
-        if (y + 1 >= 0 && city->getOrganism(x, y + 1) == nullptr) {
+        if (y + 1 <= GRIDSIZE && city->getOrganism(x, y + 1) == nullptr) {
             direction.push_back(SOUTH);
         }
         if (x - 1 >= 0 && city->getOrganism(x - 1, y) == nullptr) {
             direction.push_back(WEST);
         }
-        if (x + 1 >= 0 && city->getOrganism(x + 1, y) == nullptr) {
+        if (x + 1 <=GRIDSIZE && city->getOrganism(x + 1, y) == nullptr) {
             direction.push_back(EAST);
         }
 

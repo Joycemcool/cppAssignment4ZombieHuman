@@ -19,15 +19,49 @@ void ClearScreen()
 }
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+    //DECLARE VARIABLES
+    bool gameOver = false;
+    string userInput = "placeHolder";
+    string line = "*******************************************************************";
+    string gameRule1 = "Human Recruit: Survives three time-steps,  a new human recruited into an adjacent empty space";
+    string gameRule2 = "Zombie starved: 3 time steps and not eaten human, convert to a human";
+    string gameRule3 = "Zombie Breed : survives for eight time-steps, and after it has moved/eaten,breed a new zombie";
+
+
+    cout << "Welcome to Zombie and Human World" << endl;
+    cout<<line<<endl;
+    cout<<gameRule1<<endl;
+    cout<<gameRule2<<endl;
+    cout<<gameRule3<<endl;
+    cout<<line<<endl;
 
     //INSTANTIALIZE NEW CITY
     City city;
-    cout<<city.humanCount()<<endl;
-    cout<<city.zombieCount()<<endl;
+//    chrono:: milliseconds interval(200);
 
     if(city.humanCount()>0&&city.zombieCount()>0){
-        cout<<city<<endl;
+
+//        this_thread::sleep_for(interval);
+        do{
+            cout<<"Human count in this generation "<<city.humanCount()<<endl;
+            cout<<"Zombie count in this generation "<<city.zombieCount()<<endl;
+            cout<<city<<endl;
+            city.move();
+            cout << "Enter [n] to see the next generation : Any other key to exit" << endl;
+            cin >> userInput;
+            if (userInput == "n") {
+                //continue playing if user enters n
+                gameOver = false;
+            }
+            else {
+                //exit if user does not enter n
+                gameOver = true;
+            }
+
+        }while(!gameOver);
+    } else{
+        cout<<"Game over"<<endl;
     }
 
     city.move(); //It might need a time interval here
@@ -36,32 +70,10 @@ int main() {
     //chrono::seconds interval( 1 ) ; // 1 second
    // this_thread::sleep_for( interval ) ;
 
-    cout<<city.humanCount()<<endl;
-    cout<<city.zombieCount()<<endl;
-    cout<<city<<endl;
     return 0;
 
 } //SIGSEGV (Segmentation fault) at the end of the code
 
-void gameRules(){
-    string message =
-            "1: stays in the current cell - . If the neighboring cell in the selected direction"
-            " is occupied or would move the human out of the city "
-            "2. Human"
-            "Recruit(recruit counter): Survives three time-steps,  at the end of the time step the human will "
-            "recruit a new human into an adjacent empty space,If there is no empty cell available, no recruiting occurs"
-            "Once a recruit is produced, a human cannot recruit again until it has survived three more steps. "
-            "3. Zombie"
-            "For every time step, the zombie will move to an adjacent cell (including diagonal) "
-            "containing a human and eat the human. "
-            "Note that a zombie will not eat another zombie "
-            "Zombie Breed count (Eaten human flag): 8 - If a zombie survives for eight time-steps, and after it has moved/eaten, it will convert a randomly selected adjacent (including diagonal) "
-            "human into a zombie (i.e. replace the human with a new zombie)"
-            "If a zombie is still alive and is unable to convert, their breed counter should retain a state so that they will"
-            "convert a human provided the very next opportunity (post move/eat)."
-            "Zombie time steps - 3 not eaten human -zombie will convert to a human  "
-            "??This class should have a pure virtual function (aka abstract) named ‘turn’ overridden in the sub classes Human and Zombie. ";
 
-}
 
 

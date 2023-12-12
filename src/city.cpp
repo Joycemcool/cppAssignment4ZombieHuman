@@ -68,7 +68,7 @@ City ::City() {
     }
 
     count=0;
-    // Fill the grid with Zombies
+    // Fill the grid with Zombies, equally in the Grid
     while (count < ZOMBIE_STARTCOUNT) {
         int x = rand() % GRID_WIDTH;
         int y = rand() % GRID_HEIGHT;
@@ -116,7 +116,6 @@ void City ::move() {
     }
 
 
-
     //Random selection of Human/Zombie for movement, loop 400 times
     for(auto z = randomTable.begin(); z != randomTable.end(); ++z) {
 
@@ -127,20 +126,15 @@ void City ::move() {
         if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH() == HUMAN_CH)) {
             if (!grid[i][j]->moved) {
                 grid[i][j]->move();//MOVE THE HUMAN
-                cout<<zombieCount()<<"HUMAN"<<endl;
             }
         }
-        cout<<zombieCount()<<endl;
 
         if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
             if (!grid[i][j]->moved) { //if they haven't moved
                 grid[i][j]->move(); //First move the Zombie! aka eat
-                cout<<zombieCount()<<"ZOMBIE"<<endl;
             }
         }
     }
-
-    cout<<zombieCount()<<endl;
 
     //Loop through the world to check for starving Zombie
     for (int i = 0; i < GRIDSIZE; ++i) {
@@ -154,14 +148,11 @@ void City ::move() {
         }
     }
 
-    cout<<zombieCount()<<endl;
-
     //(5) Loop through the world and check for breeding
     for (int i = 0; i < GRIDSIZE; ++i) {
         for (int j = 0; j < GRIDSIZE; ++j) {
             //make sure the organism moved
             if ((grid[i][j] != nullptr) && (grid[i][j]->moved)&& grid[i][j]->getSpeciesCH()==ZOMBIE_CH) {
-                cout<<zombieCount()<<endl;
                 grid[i][j]->spawn(); //breed that organism (if it can)
             }
         }

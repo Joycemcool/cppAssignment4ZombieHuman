@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/W0471965/CLionProjects/cppAssignment4ZombieHuman/cmake-build-debug",
-		"source" : "C:/Users/W0471965/CLionProjects/cppAssignment4ZombieHuman"
+		"build" : "C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug",
+		"source" : "C:/Users/joyce/Documents/Code/ZombieHuman2"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 5
+		"minor" : 4
 	}
 }
