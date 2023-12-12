@@ -21,14 +21,11 @@ public:
     City();
     int humanCount();
     int zombieCount();
-    static void Col(int);
     virtual ~City();
     Organism *getOrganism( int x, int y );
     void setOrganism( Organism *organism, int x, int y );
     void move();
     friend ostream& operator<<( ostream &output, City &city );
-    void cityPrint();
-
 
     Organism *grid[GRID_HEIGHT][GRID_WIDTH];
 };

@@ -1,3 +1,3 @@
-C:/Users/joyce/Documents/Code/ZombieHuman/cmake-build-debug/CMakeFiles/ZombieHuman.dir
-C:/Users/joyce/Documents/Code/ZombieHuman/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/joyce/Documents/Code/ZombieHuman/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/W0471965/CLionProjects/cppAssignment4ZombieHuman/cmake-build-debug/CMakeFiles/ZombieHuman.dir
+C:/Users/W0471965/CLionProjects/cppAssignment4ZombieHuman/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/W0471965/CLionProjects/cppAssignment4ZombieHuman/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -58,7 +58,8 @@ void Zombie ::move() {
         switch (randomDirection) {
             case NORTH:
                 if (city->getOrganism(x, y-1)!= nullptr&& city->getOrganism(x, y-1)->getSpecies() == HUMAN) {
-                    delete city->grid[x][y-1];
+//                    delete city->grid[x][y-1];
+                    city->setOrganism(nullptr,x,y-1);
                     eaten = true;
                     starveCount=0;
                 }
@@ -67,7 +68,7 @@ void Zombie ::move() {
                 }
 
                 city->setOrganism(this, x, y-1);
-                city->grid[x][y-1] = this;
+//                city->grid[x][y-1] = this;
                 this->y--;
                 break;
             case NORTHEAST:
@@ -80,7 +81,7 @@ void Zombie ::move() {
                 else{
                     starveCount++;
                 }
-                city->setOrganism(this, x+1, y-1);
+//                city->setOrganism(this, x+1, y-1);
                 city->grid[x+1][y-1] = this; //is it duplicated?
                 this->x++, y--;
                 break;
@@ -93,8 +94,8 @@ void Zombie ::move() {
                 else{
                     starveCount++;
                 }
-                city->setOrganism(this, x+1, y);
-                city->grid[x+1][y-1] = this;
+//                city->setOrganism(this, x+1, y);
+                city->grid[x+1][y] = this;
                 this->x++;
                 break;
             case SOUTHEAST://ok 17 12 human
@@ -106,7 +107,7 @@ void Zombie ::move() {
                 else{
                     starveCount++;
                 }
-                city->setOrganism(this, x+1, y+1);
+//                city->setOrganism(this, x+1, y+1);
                 city->grid[x+1][y+1] = this;
                 this->x++,y++;
                 break;
@@ -119,7 +120,7 @@ void Zombie ::move() {
                 else{
                     starveCount++;
                 }
-                city->setOrganism(this, x, y+1);
+//                city->setOrganism(this, x, y+1);
                 city->grid[x][y+1] = this;
                 this->y++;
                 break;
@@ -132,7 +133,7 @@ void Zombie ::move() {
                 else{
                     starveCount++;
                 }
-                city->setOrganism(this, x-1, y+1);
+//                city->setOrganism(this, x-1, y+1);
                 city->grid[x-1][y+1] = this;
                 this->x--,y++;
                 break;
@@ -145,7 +146,7 @@ void Zombie ::move() {
                 else{
                     starveCount++;
                 }
-                city->setOrganism(this, x-1, y);
+//                city->setOrganism(this, x-1, y);
                 city->grid[x-1][y] = this;
                 this->x--;
 
@@ -159,13 +160,12 @@ void Zombie ::move() {
                 else{
                     starveCount++;
                 }
-                city->setOrganism(this, x-1, y-1);
+//                city->setOrganism(this, x-1, y-1);
                 city->grid[x-1][y-1] = this;
-                this->x--;
+                this->x--,y--;
                 break;
         }//END SWITCH
-
-        city->grid[x][y]= nullptr;
+        city->setOrganism(nullptr,x,y);
         timeSteps++;
         moved = true;
     }//END IF DIRECTIONS IS NOT EMPTY
@@ -184,7 +184,7 @@ char Zombie ::getSpeciesCH() {
 
 bool Zombie::starved() {
     //starve
-    if (starveCount > ZOMBIE_STARVE && !eaten) {
+    if (starveCount >= ZOMBIE_STARVE && !eaten) {
         return true;
     }
         //survive

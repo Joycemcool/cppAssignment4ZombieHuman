@@ -23,6 +23,32 @@ class Human;
 class Zombie;
 
 
+#include <iostream>
+#include <windows.h>
+#include <conio.h>
+using namespace std;
+
+void Col(int);
+
+//int main() {
+//    Col(12);
+//    cout << "RED" << std::endl;
+//    Col(7);
+//    cout << "WHITE" << std::endl;
+//    Col(3);
+//    cout << "BLUE" << std::endl;
+//    _getch();
+//    return 0;
+//}
+
+void Col(int c)
+{
+    HANDLE  hConsole;
+    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hConsole, c);
+    return;
+}
+
 City ::City() {
     cout<<"City Default Constructor called, fill with nullptr and start organisms\n"<<endl;
     //fill the word with null objects (empty spaces)
@@ -56,7 +82,7 @@ City ::City() {
 
 Organism* City ::getOrganism(int x, int y) {
     //check to make sure in the bounds of the world
-    if ((x >= 0) && (x < GRIDSIZE) && ( y >= 0) && (y < GRIDSIZE)) {
+    if (grid[x][y]!= nullptr) {
         return grid[x][y];
     }
     return nullptr;
@@ -64,17 +90,13 @@ Organism* City ::getOrganism(int x, int y) {
 
 //Fills the cell at coordinates x and y with an object
 void City ::setOrganism(Organism *organism, int x, int y) {
-    //check to make sure in the bounds of the world
-    if ((x >= 0) && (x < GRIDSIZE) && (y >= 0) && (y < GRIDSIZE)) {
-        organism->x = x;
-        organism->y = y;
         grid[x][y] = organism;
-    }
 }
 
 //Need move() and friend ostream& operator
 void City ::move() {
 
+    cout<<zombieCount()<<endl;
     vector <int> randomTable;
     for(int i = 0; i < 400; i++) {
         randomTable.push_back(i);
@@ -88,11 +110,12 @@ void City ::move() {
     for (int i = 0; i < GRIDSIZE; ++i) {
         for (int j = 0; j < GRIDSIZE; ++j) {
             if (grid[i][j] != nullptr) {
-                //HERE CHANGE THE MOVED TO PUBLIC ??
                 grid[i][j]->moved = false;
             }
         }
     }
+
+
 
     //Random selection of Human/Zombie for movement, loop 400 times
     for(auto z = randomTable.begin(); z != randomTable.end(); ++z) {
@@ -103,25 +126,26 @@ void City ::move() {
         //HARD CODE THE VALUE OF ENUM
         if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH() == HUMAN_CH)) {
             if (!grid[i][j]->moved) {
-//                grid[i][j]->moved = true; // Mark as itMoved
                 grid[i][j]->move();//MOVE THE HUMAN
+                cout<<zombieCount()<<"HUMAN"<<endl;
             }
         }
+        cout<<zombieCount()<<endl;
 
         if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
             if (!grid[i][j]->moved) { //if they haven't moved
-//                grid[i][j]->moved = true; // Mark as itMoved
                 grid[i][j]->move(); //First move the Zombie! aka eat
+                cout<<zombieCount()<<"ZOMBIE"<<endl;
             }
         }
-
     }
 
+    cout<<zombieCount()<<endl;
 
     //Loop through the world to check for starving Zombie
     for (int i = 0; i < GRIDSIZE; ++i) {
         for (int j = 0; j < GRIDSIZE; ++j) {
-            if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) { //if doodlebug
+            if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
                 if (grid[i][j]->starved()) { //if starving
                     delete (grid[i][j]); //then remove starved zombie
                     grid[i][j] = new Human(this,i,j); //and replace with an Human
@@ -130,12 +154,14 @@ void City ::move() {
         }
     }
 
+    cout<<zombieCount()<<endl;
+
     //(5) Loop through the world and check for breeding
     for (int i = 0; i < GRIDSIZE; ++i) {
         for (int j = 0; j < GRIDSIZE; ++j) {
             //make sure the organism moved
-            if ((grid[i][j] != nullptr) && (grid[i][j]->moved)) {
-                //HERE CHECK TIMESTEPS AND EATEN
+            if ((grid[i][j] != nullptr) && (grid[i][j]->moved)&& grid[i][j]->getSpeciesCH()==ZOMBIE_CH) {
+                cout<<zombieCount()<<endl;
                 grid[i][j]->spawn(); //breed that organism (if it can)
             }
         }
@@ -149,11 +175,11 @@ ostream& operator<<( ostream &output, City &city ){
             if (j != nullptr)
             {
                 if(j->getSpeciesCH()==ZOMBIE_CH){
-
+                    Col(ZOMBIE_COLOR);
                     output <<"\033[38;5;"<<ZOMBIE_COLOR<<"m"<<j->getSpeciesCH() << "\033[0m"<<' ';
                 }
                 else{
-
+                    Col(HUMAN_COLOR);
                     output <<"\033[38;5;"<<HUMAN_COLOR<<"m"<<j->getSpeciesCH() << "\033[0m"<<' ';
                 }
             }

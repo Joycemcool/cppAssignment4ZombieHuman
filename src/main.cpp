@@ -23,6 +23,9 @@ int main() {
 
     //INSTANTIALIZE NEW CITY
     City city;
+    cout<<city.humanCount()<<endl;
+    cout<<city.zombieCount()<<endl;
+
     if(city.humanCount()>0&&city.zombieCount()>0){
         cout<<city<<endl;
     }
@@ -33,7 +36,9 @@ int main() {
     //chrono::seconds interval( 1 ) ; // 1 second
    // this_thread::sleep_for( interval ) ;
 
-
+    cout<<city.humanCount()<<endl;
+    cout<<city.zombieCount()<<endl;
+    cout<<city<<endl;
     return 0;
 
 } //SIGSEGV (Segmentation fault) at the end of the code
