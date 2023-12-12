@@ -16,12 +16,14 @@ Zombie ::Zombie() :Organism() {
    //INTENTIONALLY LEFT BLANK
    starveCount=0;
    eaten = false;
+   breedCount= false;
 }
 
 Zombie ::Zombie( City *city, int x, int y ) :Organism(city, x, y){
     //Figure out what's inside the default constructor
     starveCount=0;
     eaten= false;
+    breedCount= false;
 }
 
 
@@ -40,7 +42,7 @@ void Zombie ::move() {
     if((x+1 <GRID_WIDTH && y+1 <GRID_HEIGHT )&& (city->getOrganism(x+1,y+1)== nullptr||city->getOrganism(x+1,y+1)->getSpecies()==HUMAN)){
         directions.push_back(SOUTHEAST);
     }
-    if(y+1 >=GRID_HEIGHT && (city->getOrganism(x,y+1)== nullptr||city->getOrganism(x,y+1)->getSpecies()==HUMAN)){
+    if(y+1 <GRID_HEIGHT && (city->getOrganism(x,y+1)== nullptr||city->getOrganism(x,y+1)->getSpecies()==HUMAN)){
         directions.push_back(SOUTH);
     }
     if((x-1 >=0 && y+1<GRID_HEIGHT)&& (city->getOrganism(x-1,y+1)== nullptr||city->getOrganism(x-1,y+1)->getSpecies()==HUMAN)){
@@ -66,108 +68,102 @@ void Zombie ::move() {
                 else{
                     starveCount++;
                 }
-
-                city->setOrganism(this, x, y-1);
-//                city->grid[x][y-1] = this;
+                city->setOrganism(this, x, y-1); //Zombie seems doesn't move
                 this->y--;
                 break;
             case NORTHEAST:
-
                 if (city->getOrganism(x+1, y-1)!= nullptr&&city->getOrganism(x+1, y-1)->getSpecies() == HUMAN) {
-                    delete city->grid[x + 1][y-1];
+                    city->setOrganism(nullptr,x+1,y-1);
                     eaten = true;
                     starveCount=0;
                 }
                 else{
                     starveCount++;
                 }
-//                city->setOrganism(this, x+1, y-1);
-                city->grid[x+1][y-1] = this; //is it duplicated?
+                city->setOrganism(this, x+1, y-1);
                 this->x++, y--;
                 break;
             case EAST://ok 17 11 null
                 if (city->getOrganism(x+1, y)!= nullptr&&city->getOrganism(x+1, y)->getSpecies() == HUMAN) {
-                    delete (city->grid[x+1][y]);
+                    city->setOrganism(nullptr,x+1,y);
                     eaten = true;
                     starveCount=0;
                 }
                 else{
                     starveCount++;
                 }
-//                city->setOrganism(this, x+1, y);
-                city->grid[x+1][y] = this;
+                city->setOrganism(this, x+1, y);
                 this->x++;
                 break;
             case SOUTHEAST://ok 17 12 human
                 if (city->getOrganism(x+1, y+1)!= nullptr&&city->getOrganism(x+1, y+1)->getSpecies() == HUMAN) {
-                    delete (city->grid[x+1][y+1]);
+                    city->setOrganism(nullptr,x+1,y+1);
                     eaten = true;
                     starveCount=0;
                 }
                 else{
                     starveCount++;
                 }
-//                city->setOrganism(this, x+1, y+1);
-                city->grid[x+1][y+1] = this;
+                city->setOrganism(this, x+1, y+1);
+
                 this->x++,y++;
                 break;
             case SOUTH:
                 if (city->getOrganism(x, y+1)!= nullptr&&city->getOrganism(x, y+1)->getSpecies() == HUMAN) {
-                    delete (city->grid[x][y+1]);
+                    city->setOrganism(nullptr,x,y+1);
                     eaten = true;
                     starveCount=0;
                 }
                 else{
                     starveCount++;
                 }
-//                city->setOrganism(this, x, y+1);
-                city->grid[x][y+1] = this;
+                city->setOrganism(this, x, y+1);
                 this->y++;
                 break;
             case SOUTHWEST:
                 if (city->getOrganism(x-1, y+1)!= nullptr&&city->getOrganism(x-1, y+1)->getSpecies() == HUMAN) {
-                    delete (city->grid[x-1][y+1]);
+                    city->setOrganism(nullptr,x-1,y+1);
                     eaten = true;
                     starveCount=0;
                 }
                 else{
                     starveCount++;
                 }
-//                city->setOrganism(this, x-1, y+1);
-                city->grid[x-1][y+1] = this;
+                city->setOrganism(this, x-1, y+1);
                 this->x--,y++;
                 break;
             case WEST:
                 if (city->getOrganism(x-1, y)!= nullptr&&city->getOrganism(x-1, y)->getSpecies() == HUMAN) {
-                    delete (city->grid[x-1][y]);
+                    city->setOrganism(nullptr,x-1,y);
                     eaten = true;
                     starveCount=0;
                 }
                 else{
                     starveCount++;
                 }
-//                city->setOrganism(this, x-1, y);
-                city->grid[x-1][y] = this;
+                city->setOrganism(this, x-1, y);
                 this->x--;
 
                 break;
             case NORTHWEST:
                 if (city->getOrganism(x-1, y-1)!= nullptr&&city->getOrganism(x-1, y-1)->getSpecies() == HUMAN) {
-                    delete (city->grid[x-1][y-1]);
+                    city->setOrganism(nullptr,x-1,y-1);
                     eaten = true;
                     starveCount=0;
                 }
                 else{
                     starveCount++;
                 }
-//                city->setOrganism(this, x-1, y-1);
-                city->grid[x-1][y-1] = this;
+                city->setOrganism(this,x-1,y-1);
                 this->x--,y--;
                 break;
         }//END SWITCH
         city->setOrganism(nullptr,x,y);
         timeSteps++;
         moved = true;
+        if(timeSteps>=8){
+            breedCount= true;
+        }
     }//END IF DIRECTIONS IS NOT EMPTY
     else{
         cout<<"nothing change"<<endl;
@@ -193,29 +189,28 @@ bool Zombie::starved() {
     }
 }
 void Zombie::spawn() {
-    if (timeSteps >= ZOMBIE_BREED && eaten){
+    if (timeSteps >= ZOMBIE_BREED && eaten && breedCount){
         vector <int> directions;
-
         //BUILD THE VECTOR
-        if(y-1 >=0 && city->getOrganism(x,y-1)->getSpecies()==HUMAN){
+        if(y-1 >=0 &&city->getOrganism(x,y-1)!= nullptr&& city->getOrganism(x,y-1)->getSpecies()==HUMAN){
             directions.push_back(NORTH);
         }
-        if((x+1<GRID_WIDTH && y-1 >=0 )&& city->getOrganism(x+1,y-1)->getSpecies()==HUMAN){
+        if((x+1<GRID_WIDTH && y-1 >=0 )&& city->getOrganism(x+1,y-1)!= nullptr&&city->getOrganism(x+1,y-1)->getSpecies()==HUMAN){
             directions.push_back(NORTHEAST);
         }
-        if(x+1 <GRID_WIDTH && city->getOrganism(x+1,y)->getSpecies()==HUMAN){
+        if(x+1 <GRID_WIDTH && city->getOrganism(x+1,y)!= nullptr&&city->getOrganism(x+1,y)->getSpecies()==HUMAN){
             directions.push_back(EAST);
         }
-        if((x+1 <GRID_WIDTH && y+1<GRID_WIDTH) && city->getOrganism(x+1,y+1)->getSpecies()==HUMAN){
+        if((x+1 <GRID_WIDTH && y+1<GRID_WIDTH) && city->getOrganism(x+1,y+1)!= nullptr&&city->getOrganism(x+1,y+1)->getSpecies()==HUMAN){
             directions.push_back(SOUTHEAST);
         }
-        if(y+1 >=GRID_HEIGHT && city->getOrganism(x,y+1)->getSpecies()==HUMAN){
+        if(y+1 <GRID_HEIGHT && city->getOrganism(x,y+1)!= nullptr&&city->getOrganism(x,y+1)->getSpecies()==HUMAN){
             directions.push_back(SOUTH);
         }
-        if((x-1 >=0 && y+1<GRID_HEIGHT)&&city->getOrganism(x-1,y-1)->getSpecies()==HUMAN){
+        if((x-1 >=0 && y+1<GRID_HEIGHT)&&city->getOrganism(x-1,y+1)!= nullptr&&city->getOrganism(x-1,y+1)->getSpecies()==HUMAN){
             directions.push_back(SOUTHWEST);
         }
-        if(x-1 >=0 && city->getOrganism(x-1,y)->getSpecies()==HUMAN){
+        if(x-1 >=0 && city->getOrganism(x-1,y)!= nullptr&&city->getOrganism(x-1,y)->getSpecies()==HUMAN){
             directions.push_back(WEST);
         }
 
@@ -223,57 +218,55 @@ void Zombie::spawn() {
         shuffle(directions.begin(),directions.end(),default_random_engine(seed));
 
         if(!directions.empty()){
+            //Breed
             auto randomDirection = static_cast<Direction>(directions[0]);
             switch (randomDirection) {
                 case NORTH:
-                    delete city->grid[x][y-1];
+                    city->setOrganism(nullptr,x,y-1);
                     new Zombie(city, x, y-1);
                     break;
                 case NORTHEAST:
-                    delete city->grid[x+1][y-1];
+                    city->setOrganism(nullptr,x+1,y-1);
                     new Zombie(city, x+1, y-1);
                     break;
                 case EAST:
-                    delete city->grid[x+1][y];
+                    city->setOrganism(nullptr,x+1,y);
                     new Zombie(city, x+1, y);
                     break;
                 case SOUTHEAST:
-                    delete city->grid[x+1][y+1];
+                    city->setOrganism(nullptr,x+1,y+1);
                     new Zombie(city, x+1, y+1);
                     timeSteps = 0;
                     break;
                 case SOUTH:
-                    delete city->grid[x][y+1];
+                    city->setOrganism(nullptr,x,y+1);
                     new Zombie(city, x, y+1);
                     break;
                 case SOUTHWEST:
-                    delete city->grid[x-1][y+1];
+                    city->setOrganism(nullptr,x-1,y+1);
                     new Zombie(city, x-1, y+1);
                     break;
                 case WEST:
-                    delete city->grid[x-1][y];
+                    city->setOrganism(nullptr,x-1,y);
                     new Zombie(city, x-1, y);
                     break;
                 case NORTHWEST:
-                    delete city->grid[x=1][y-1];
+                    city->setOrganism(nullptr,x-1,y-1);
                     city->grid[x-1][y-1] = new Zombie(city, x-1, y-1);
                     break;
+
             }//END SWITCH
+            breedCount= false;
             timeSteps = 0; //DOUBLE CHECK IF TIMESTEPS INCREMENT OR NOT
         }//END DIRECTIONS EMPTY
         else{
-            if(timeSteps<=9){
-                timeSteps++;
-            }
-            else{
-                timeSteps=0;
+            //If no human around
+            cout<<"Zombie no breed with breed count available"<<endl;
             }
 
-        }
     }//END IF TIMESTEPS CONDITON
-
+//The breed counter is a separate variable. When it reaches 8 it stays there
+// until the zombie can bite someone. Once they bite someone, the counter is reset to 0.
 }//END SPAWN METHOD
 
-Zombie :: ~Zombie()  {
-
-}
+Zombie :: ~Zombie()  = default;

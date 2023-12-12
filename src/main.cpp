@@ -41,9 +41,10 @@ int main() {
 //    chrono:: milliseconds interval(200);
 
     if(city.humanCount()>0&&city.zombieCount()>0){
-
+        int gameCount=1;
 //        this_thread::sleep_for(interval);
         do{
+            cout<<"This is generation " <<gameCount<<endl;
             cout<<"Human count in this generation "<<city.humanCount()<<endl;
             cout<<"Zombie count in this generation "<<city.zombieCount()<<endl;
             cout<<city<<endl;
@@ -58,7 +59,7 @@ int main() {
                 //exit if user does not enter n
                 gameOver = true;
             }
-
+            gameCount++;
         }while(!gameOver);
     } else{
         cout<<"Game over"<<endl;

@@ -140,20 +140,21 @@ void City ::move() {
     for (int i = 0; i < GRIDSIZE; ++i) {
         for (int j = 0; j < GRIDSIZE; ++j) {
             if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
-                if (grid[i][j]->starved()) { //if starving
-                    delete (grid[i][j]); //then remove starved zombie
-                    grid[i][j] = new Human(this,i,j); //and replace with an Human
+                if (grid[i][j]->starved()) {
+                    setOrganism(nullptr,i,j);
+                    new Human(this,i,j);
+//                    grid[i][j] = new Human(this,i,j); //??  replace with an Human
                 }
             }
         }
     }
 
-    //(5) Loop through the world and check for breeding
+    //(5) Loop through the world and check for breeding/recruiting
     for (int i = 0; i < GRIDSIZE; ++i) {
         for (int j = 0; j < GRIDSIZE; ++j) {
             //make sure the organism moved
-            if ((grid[i][j] != nullptr) && (grid[i][j]->moved)&& grid[i][j]->getSpeciesCH()==ZOMBIE_CH) {
-                grid[i][j]->spawn(); //breed that organism (if it can)
+            if (grid[i][j] != nullptr && grid[i][j]->moved) {
+                grid[i][j]->spawn(); //?? Is this right way for both species
             }
         }
     }

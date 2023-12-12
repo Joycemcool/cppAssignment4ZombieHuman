@@ -37,23 +37,23 @@ void Human ::move() {
     if(x+1 >=0 && city->getOrganism(x+1,y)== nullptr){
         directions.push_back(EAST);
     }
-
     unsigned seed = chrono::system_clock::now().time_since_epoch().count();
     shuffle(directions.begin(),directions.end(),default_random_engine(seed));
-    auto randomDirection = static_cast<Direction>(directions[0]);
+
     if(!directions.empty()){
+        auto randomDirection = static_cast<Direction>(directions[0]);
         switch (randomDirection) {
             case NORTH:
                 if (y>0 && city->getOrganism(x, y-1) == nullptr){
                     city->setOrganism(this,x,y-1);
-                    city->grid[x][y]= nullptr;
+                    city->setOrganism(nullptr,x,y);
                     y--;
                 }
                 break;
             case SOUTH:
                 if (y < GRIDSIZE-1 && city->getOrganism(x, y+1) == nullptr){
                     city->setOrganism(this,x,y+1);
-                    city->grid[x][y]= nullptr;
+                    city->setOrganism(nullptr,x,y);
                     y++;
                 }
                 break;
@@ -61,14 +61,14 @@ void Human ::move() {
             case WEST:
                 if (x > 0 && city->getOrganism(x-1, y) == nullptr){
                     city->setOrganism(this,x-1,y);
-                    city->grid[x][y]= nullptr;
+                    city->setOrganism(nullptr,x,y);
                     x--;
                 }
                 break;
             case EAST:
                 if (x < GRIDSIZE-1 && city->getOrganism(x+1, y) == nullptr){
                     city->setOrganism(this,x+1,y);
-                    city->grid[x][y]= nullptr;
+                    city->setOrganism(nullptr,x,y);
                     x++;
                 }
                 break;
@@ -107,9 +107,10 @@ void Human ::spawn() {
 
         unsigned seed = chrono::system_clock::now().time_since_epoch().count();
         shuffle(direction.begin(), direction.end(), default_random_engine(seed));
-        auto randomDirection = static_cast<Direction>(direction[0]);
+
 
         if (!direction.empty()) {
+            auto randomDirection = static_cast<Direction>(direction[0]);
             switch (randomDirection) {
                 case NORTH:
                     new Human(city, x, y - 1);
