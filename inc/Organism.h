@@ -18,8 +18,8 @@ class Zombie;
 class Organism
 {
 protected:
-    int x;
-    int y;
+//    int x;
+//    int y;
 //    int width;
 //    int height;
     City *city;
@@ -28,6 +28,8 @@ protected:
 
 
 public:
+    int x;
+    int y;
     Organism();
     Organism( City *city, int x, int y);
     virtual ~Organism();

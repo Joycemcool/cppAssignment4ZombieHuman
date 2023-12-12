@@ -37,16 +37,16 @@ void Zombie ::move() {
     if(x+1 <GRID_WIDTH && (city->getOrganism(x+1,y)== nullptr||city->getOrganism(x+1,y)->getSpecies()==HUMAN)){
         directions.push_back(EAST);
     }
-    if((x+1 <GRID_WIDTH && y+1 <GRID_HEIGHT )&& city->getOrganism(x+1,y+1)== nullptr||city->getOrganism(x+1,y+1)->getSpecies()==HUMAN){
+    if((x+1 <GRID_WIDTH && y+1 <GRID_HEIGHT )&& (city->getOrganism(x+1,y+1)== nullptr||city->getOrganism(x+1,y+1)->getSpecies()==HUMAN)){
         directions.push_back(SOUTHEAST);
     }
-    if(y+1 >=GRID_HEIGHT && city->getOrganism(x,y+1)== nullptr||city->getOrganism(x,y+1)->getSpecies()==HUMAN){
+    if(y+1 >=GRID_HEIGHT && (city->getOrganism(x,y+1)== nullptr||city->getOrganism(x,y+1)->getSpecies()==HUMAN)){
         directions.push_back(SOUTH);
     }
-    if((x-1 >=0 && y+1<GRID_HEIGHT)&&city->getOrganism(x-1,y+1)== nullptr||city->getOrganism(x-1,y-1)->getSpecies()==HUMAN){
+    if((x-1 >=0 && y+1<GRID_HEIGHT)&& (city->getOrganism(x-1,y+1)== nullptr||city->getOrganism(x-1,y+1)->getSpecies()==HUMAN)){
         directions.push_back(SOUTHWEST);
     }
-    if(x-1 >=0 && city->getOrganism(x-1,y)== nullptr||city->getOrganism(x-1,y)->getSpecies()==HUMAN){
+    if(x-1 >=0 && (city->getOrganism(x-1,y)== nullptr||city->getOrganism(x-1,y)->getSpecies()==HUMAN)){
         directions.push_back(WEST);
     }
 
@@ -55,37 +55,39 @@ void Zombie ::move() {
     auto randomDirection = static_cast<Direction>(directions[0]);
 
     if(!directions.empty()){
-        //Up check if human
+        //Up check if human //x=16,y=11
         switch (randomDirection) {
-            case NORTH:
-                if (city->getOrganism(x, y - 1)->getSpeciesCH() == HUMAN_CH) {
-                    delete (city->grid[x][y - 1]);
+            case NORTH://ok 16 10 NULL
+                if (city->getOrganism(x, y-1)->getSpecies() == HUMAN) {
+                    delete city->grid[x][y-1];
                     eaten = true;
                 }
-                city->setOrganism(this, x, y - 1);
-                city->grid[x][y - 1] = this; //is it duplicated?
+                city->setOrganism(this, x, y-1);
+                city->grid[x][y-1] = this; //is it duplicated?
                 this->y--;
                 break;
-            case NORTHEAST:
-                if (city->getOrganism(x + 1, y - 1)->getSpeciesCH() == HUMAN_CH) {
-                    delete (city->grid[x + 1][y - 1]);
+            case NORTHEAST://ok 17 9 NULL
+
+            //city->getOrganism(x-1,y)->getSpecies()==HUMAN
+                if (city->getOrganism(x+1, y-1)->getSpecies() == HUMAN) {
+                    delete city->grid[x + 1][y-1];
                     eaten = true;
                 }
-                city->setOrganism(this, x+1, y - 1);
-                city->grid[x+1][y - 1] = this; //is it duplicated?
+                city->setOrganism(this, x+1, y-1);
+                city->grid[x+1][y-1] = this; //is it duplicated?
                 this->x++, y--;
                 break;
-            case EAST:
-                if (city->getOrganism(x + 1, y)->getSpeciesCH() == HUMAN_CH) {
-                    delete (city->grid[x + 1][y]);
+            case EAST://ok 17 11 null
+                if (city->getOrganism(x+1, y)->getSpecies() == HUMAN) {
+                    delete (city->grid[x+1][y]);
                     eaten = true;
                 }
                 city->setOrganism(this, x+1, y);
-                city->grid[x+1][y - 1] = this;
+                city->grid[x+1][y-1] = this;
                 this->x++;
                 break;
-            case SOUTHEAST:
-                if (city->getOrganism(x+1, y+1)->getSpeciesCH() == HUMAN_CH) {
+            case SOUTHEAST://ok 17 12 human
+                if (city->getOrganism(x+1, y+1)->getSpecies() == HUMAN) {
                     delete (city->grid[x+1][y+1]);
                     eaten = true;
                 }
@@ -94,7 +96,7 @@ void Zombie ::move() {
                 this->x++,y++;
                 break;
             case SOUTH:
-                if (city->getOrganism(x, y+1)->getSpeciesCH() == HUMAN_CH) {
+                if (city->getOrganism(x, y+1)->getSpecies() == HUMAN) {
                     delete (city->grid[x][y+1]);
                     eaten = true;
                 }
@@ -102,8 +104,8 @@ void Zombie ::move() {
                 city->grid[x][y+1] = this;
                 this->y++;
                 break;
-            case SOUTHWEST:
-                if (city->getOrganism(x-1, y+1)->getSpeciesCH() == HUMAN_CH) {
+            case SOUTHWEST://ok 15,12 NULL
+                if (city->getOrganism(x-1, y+1)->getSpecies() == HUMAN) {
                     delete (city->grid[x-1][y+1]);
                     eaten = true;
                 }
@@ -111,8 +113,8 @@ void Zombie ::move() {
                 city->grid[x-1][y+1] = this;
                 this->x--,y++;
                 break;
-            case WEST:
-                if (city->getOrganism(x-1, y)->getSpeciesCH() == HUMAN_CH) {
+            case WEST: //ok 15,11 human
+                if (city->getOrganism(x-1, y)->getSpecies() == HUMAN) {
                     delete (city->grid[x-1][y]);
                     eaten = true;
                 }
@@ -121,7 +123,7 @@ void Zombie ::move() {
                 this->x--;
                 break;
             case NORTHWEST:
-                if (city->getOrganism(x-1, y-1)->getSpeciesCH() == HUMAN_CH) {
+                if (city->getOrganism(x-1, y-1)->getSpecies() == HUMAN) {
                     delete (city->grid[x-1][y-1]);
                     eaten = true;
                 }

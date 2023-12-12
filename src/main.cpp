@@ -1,7 +1,12 @@
 
 #include <iostream>
+#include <thread>
+#include <ctime>
+#include <ratio>
+#include <cstdlib>
 #include <chrono>
 #include <thread>
+
 #include "../inc/Organism.h"
 #include "../inc/City.h"
 using namespace std;
@@ -19,10 +24,15 @@ int main() {
     //INSTANTIALIZE NEW CITY
     City city;
     if(city.humanCount()>0&&city.zombieCount()>0){
-        cout<<city;
-        city.move();
-        cout<<city;
+        cout<<city<<endl;
     }
+
+    city.move(); //It might need a time interval here
+
+    //this_thread::sleep_for(3s);
+    //chrono::seconds interval( 1 ) ; // 1 second
+   // this_thread::sleep_for( interval ) ;
+
 
 return 0;
 }

@@ -22,7 +22,7 @@ Organism ::Organism(City *city, int x, int y) {
     this->x =x;
     this->y =y;
     this->city = city;
-    city->setOrganism(this,x,y);
+//    city->setOrganism(this,x,y);
     moved = false;
     timeSteps=0;
 }
@@ -35,5 +35,5 @@ ostream& operator<<( ostream &output, Organism *organism ){
 }
 
 Organism :: ~Organism() {
-    delete city;
+//    delete city;
 };

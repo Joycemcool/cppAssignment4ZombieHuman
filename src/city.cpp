@@ -42,7 +42,7 @@ City ::City() {
         int x = rand() % GRID_WIDTH;
         int y = rand() % GRID_HEIGHT;
         if(grid[x][y]==nullptr){
-            grid[x][y] = new Human();
+            grid[x][y] = new Human(this,x,y);
             count++;
         }
     }
@@ -53,7 +53,7 @@ City ::City() {
         int x = rand() % GRID_WIDTH;
         int y = rand() % GRID_HEIGHT;
         if(grid[x][y]==nullptr){
-            grid[x][y] = new Zombie();
+            grid[x][y] = new Zombie(this,x,y);
             count++;
         }
     }
@@ -72,6 +72,8 @@ Organism* City ::getOrganism(int x, int y) {
 void City ::setOrganism(Organism *organism, int x, int y) {
     //check to make sure in the bounds of the world
     if ((x >= 0) && (x < GRIDSIZE) && (y >= 0) && (y < GRIDSIZE)) {
+        organism->x = x;
+        organism->y = y;
         grid[x][y] = organism;
     }
 }
@@ -103,20 +105,26 @@ void City ::move() {
 
         int i = *z / 20; //for row
         int j = *z % 20; //for column
+
+        //HARD CODE THE VALUE OF ENUM
+        if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH() == HUMAN_CH)) {
+            if (!grid[i][j]->moved) {
+                grid[i][j]->moved = true; // Mark as itMoved
+                grid[i][j]->move();//MOVE THE HUMAN
+            }
+        }
+
         if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
             if (!grid[i][j]->moved) { //if they haven't moved
                 grid[i][j]->moved = true; // Mark as itMoved
                 grid[i][j]->move(); //First move the Zombie! aka eat
             }
         }
+        //i=15,j=8 z:308
+        //x=0,y=0
+        //city=null
 
-        //HARD CODE THE VALUE OF ENUM
-        if ((grid[i][j] != nullptr) && (grid[i][j]->getSpecies() == HUMAN_CH)) {
-            if (!grid[i][j]->moved) {
-                grid[i][j]->moved = true; // Mark as itMoved
-                grid[i][j]->move();//MOVE THE HUMAN
-            }
-        }
+
     }
 
 
@@ -167,33 +175,6 @@ ostream& operator<<( ostream &output, City &city ){
     }
     return output;
 };
-
-//PRINT CITY
-void City :: cityPrint() {
-    cout<<"Print"<<endl;
-    for (int i = 0; i < GRID_HEIGHT; ++i) {
-        for (int j = 0; j < GRID_WIDTH; ++j) {
-            if (grid[i][j] != nullptr) {
-                if(grid[i][j]->getSpeciesCH()=='Z')
-//                    if(grid[i][j]->getSpeciesCH()==ZOMBIE_CH)
-
-                {
-//                    Col(4);
-//                }
-//                else{
-//                    Col(6);
-                }
-                cout<<"print"<<grid[i][j]->getSpeciesCH()<<endl;
-//                cout << grid[i][j]->getSpeciesCH() << ' ';
-            } else {
-//                Col(7);
-                cout<<"null"<<endl;
-//                cout << SPACE_CH << ' ';
-            }
-        }
-        cout << '\n';
-    }
-}
 
 //DESTRUCTOR
 City::~City() {
