@@ -23,56 +23,59 @@ Human ::Human(City *city, int x, int y) : Organism(city,x,y ){
 void Human ::move() {
 
     //USE A VECTOR TO RANDOM DIRECTION,HUMAN CAN ONLY MOVE TO EMPTY CELLS
-    vector <int> direction;
+    vector <int> directions;
 
     if(y-1 >=0 && city->getOrganism(x,y-1)== nullptr){
-        direction.push_back(NORTH);
+        directions.push_back(NORTH);
     }
     if(y+1 >=0 && city->getOrganism(x,y+1)== nullptr){
-        direction.push_back(SOUTH);
+        directions.push_back(SOUTH);
     }
     if(x-1 >=0 && city->getOrganism(x-1,y)== nullptr){
-        direction.push_back(WEST);
+        directions.push_back(WEST);
     }
     if(x+1 >=0 && city->getOrganism(x+1,y)== nullptr){
-        direction.push_back(EAST);
+        directions.push_back(EAST);
     }
 
     unsigned seed = chrono::system_clock::now().time_since_epoch().count();
-    shuffle(direction.begin(),direction.end(),default_random_engine(seed));
-    auto randomDirection = static_cast<Direction>(direction[0]);
+    shuffle(directions.begin(),directions.end(),default_random_engine(seed));
+    auto randomDirection = static_cast<Direction>(directions[0]);
+    if(!directions.empty()){
+        switch (randomDirection) {
+            case NORTH:
+                if (y>0 && city->getOrganism(x, y-1) == nullptr){
+                    city->setOrganism(this,x,y-1);
+                    city->grid[x][y]= nullptr;
+                    y--;
+                }
+                break;
+            case SOUTH:
+                if (y < GRIDSIZE-1 && city->getOrganism(x, y+1) == nullptr){
+                    city->setOrganism(this,x,y+1);
+                    city->grid[x][y]= nullptr;
+                    y++;
+                }
+                break;
 
-    switch (randomDirection) {
-        case NORTH:
-            if (y>0 && city->getOrganism(x, y-1) == nullptr){
-                city->setOrganism(this,x,y-1);
-                city->setOrganism(nullptr,x,y);
-                y--;
-            }
-            break;
-        case SOUTH:
-            if (y < GRIDSIZE-1 && city->getOrganism(x, y+1) == nullptr){
-                city->setOrganism(this,x,y+1);
-                city->setOrganism(nullptr,x,y);
-                y++;
-            }
-            break;
-
-        case WEST:
-            if (x > 0 && city->getOrganism(x-1, y) == nullptr){
-                city->setOrganism(this,x-1,y);
-                city->setOrganism(nullptr,x,y);
-                x--;
-            }
-            break;
-        case EAST:
-            if (x < GRIDSIZE-1 && city->getOrganism(x+1, y) == nullptr){
-                city->setOrganism(this,x+1,y);
-                city->setOrganism(nullptr,x,y);
-                x++;
-            }
-            break;
-    }
+            case WEST:
+                if (x > 0 && city->getOrganism(x-1, y) == nullptr){
+                    city->setOrganism(this,x-1,y);
+                    city->grid[x][y]= nullptr;
+                    x--;
+                }
+                break;
+            case EAST:
+                if (x < GRIDSIZE-1 && city->getOrganism(x+1, y) == nullptr){
+                    city->setOrganism(this,x+1,y);
+                    city->grid[x][y]= nullptr;
+                    x++;
+                }
+                break;
+        }//END SWITCH STATEMENT
+        moved= true;
+        timeSteps++;
+    }//END IF DIRECTIONS EMPTY
 
 } //END MOVE FUNCTION
 

@@ -22,12 +22,6 @@ class Organism;
 class Human;
 class Zombie;
 
-//FUNCTION TO COLOR PRINT
-void City :: Col(int c){
-    HANDLE  hConsole;
-    hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, c);
-}
 
 City ::City() {
     cout<<"City Default Constructor called, fill with nullptr and start organisms\n"<<endl;
@@ -109,21 +103,17 @@ void City ::move() {
         //HARD CODE THE VALUE OF ENUM
         if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH() == HUMAN_CH)) {
             if (!grid[i][j]->moved) {
-                grid[i][j]->moved = true; // Mark as itMoved
+//                grid[i][j]->moved = true; // Mark as itMoved
                 grid[i][j]->move();//MOVE THE HUMAN
             }
         }
 
         if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
             if (!grid[i][j]->moved) { //if they haven't moved
-                grid[i][j]->moved = true; // Mark as itMoved
+//                grid[i][j]->moved = true; // Mark as itMoved
                 grid[i][j]->move(); //First move the Zombie! aka eat
             }
         }
-        //i=15,j=8 z:308
-        //x=0,y=0
-        //city=null
-
 
     }
 
@@ -133,8 +123,8 @@ void City ::move() {
         for (int j = 0; j < GRIDSIZE; ++j) {
             if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) { //if doodlebug
                 if (grid[i][j]->starved()) { //if starving
-                    delete (grid[i][j]); //then kill of that doodlebug
-                    grid[i][j] = nullptr; //and replace with an empty space
+                    delete (grid[i][j]); //then remove starved zombie
+                    grid[i][j] = new Human(this,i,j); //and replace with an Human
                 }
             }
         }
@@ -144,7 +134,7 @@ void City ::move() {
     for (int i = 0; i < GRIDSIZE; ++i) {
         for (int j = 0; j < GRIDSIZE; ++j) {
             //make sure the organism moved
-            if ((grid[i][j] != nullptr) && (grid[i][j]->moved == true)) {
+            if ((grid[i][j] != nullptr) && (grid[i][j]->moved)) {
                 //HERE CHECK TIMESTEPS AND EATEN
                 grid[i][j]->spawn(); //breed that organism (if it can)
             }

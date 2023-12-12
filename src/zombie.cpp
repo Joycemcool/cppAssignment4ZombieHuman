@@ -55,90 +55,123 @@ void Zombie ::move() {
     auto randomDirection = static_cast<Direction>(directions[0]);
 
     if(!directions.empty()){
-        //Up check if human //x=16,y=11
         switch (randomDirection) {
-            case NORTH://ok 16 10 NULL
-                if (city->getOrganism(x, y-1)->getSpecies() == HUMAN) {
+            case NORTH:
+                if (city->getOrganism(x, y-1)!= nullptr&& city->getOrganism(x, y-1)->getSpecies() == HUMAN) {
                     delete city->grid[x][y-1];
                     eaten = true;
+                    starveCount=0;
                 }
+                else{
+                    starveCount++;
+                }
+
                 city->setOrganism(this, x, y-1);
-                city->grid[x][y-1] = this; //is it duplicated?
+                city->grid[x][y-1] = this;
                 this->y--;
                 break;
-            case NORTHEAST://ok 17 9 NULL
+            case NORTHEAST:
 
-            //city->getOrganism(x-1,y)->getSpecies()==HUMAN
-                if (city->getOrganism(x+1, y-1)->getSpecies() == HUMAN) {
+                if (city->getOrganism(x+1, y-1)!= nullptr&&city->getOrganism(x+1, y-1)->getSpecies() == HUMAN) {
                     delete city->grid[x + 1][y-1];
                     eaten = true;
+                    starveCount=0;
+                }
+                else{
+                    starveCount++;
                 }
                 city->setOrganism(this, x+1, y-1);
                 city->grid[x+1][y-1] = this; //is it duplicated?
                 this->x++, y--;
                 break;
             case EAST://ok 17 11 null
-                if (city->getOrganism(x+1, y)->getSpecies() == HUMAN) {
+                if (city->getOrganism(x+1, y)!= nullptr&&city->getOrganism(x+1, y)->getSpecies() == HUMAN) {
                     delete (city->grid[x+1][y]);
                     eaten = true;
+                    starveCount=0;
+                }
+                else{
+                    starveCount++;
                 }
                 city->setOrganism(this, x+1, y);
                 city->grid[x+1][y-1] = this;
                 this->x++;
                 break;
             case SOUTHEAST://ok 17 12 human
-                if (city->getOrganism(x+1, y+1)->getSpecies() == HUMAN) {
+                if (city->getOrganism(x+1, y+1)!= nullptr&&city->getOrganism(x+1, y+1)->getSpecies() == HUMAN) {
                     delete (city->grid[x+1][y+1]);
                     eaten = true;
+                    starveCount=0;
+                }
+                else{
+                    starveCount++;
                 }
                 city->setOrganism(this, x+1, y+1);
                 city->grid[x+1][y+1] = this;
                 this->x++,y++;
                 break;
             case SOUTH:
-                if (city->getOrganism(x, y+1)->getSpecies() == HUMAN) {
+                if (city->getOrganism(x, y+1)!= nullptr&&city->getOrganism(x, y+1)->getSpecies() == HUMAN) {
                     delete (city->grid[x][y+1]);
                     eaten = true;
+                    starveCount=0;
+                }
+                else{
+                    starveCount++;
                 }
                 city->setOrganism(this, x, y+1);
                 city->grid[x][y+1] = this;
                 this->y++;
                 break;
-            case SOUTHWEST://ok 15,12 NULL
-                if (city->getOrganism(x-1, y+1)->getSpecies() == HUMAN) {
+            case SOUTHWEST:
+                if (city->getOrganism(x-1, y+1)!= nullptr&&city->getOrganism(x-1, y+1)->getSpecies() == HUMAN) {
                     delete (city->grid[x-1][y+1]);
                     eaten = true;
+                    starveCount=0;
+                }
+                else{
+                    starveCount++;
                 }
                 city->setOrganism(this, x-1, y+1);
                 city->grid[x-1][y+1] = this;
                 this->x--,y++;
                 break;
-            case WEST: //ok 15,11 human
-                if (city->getOrganism(x-1, y)->getSpecies() == HUMAN) {
+            case WEST:
+                if (city->getOrganism(x-1, y)!= nullptr&&city->getOrganism(x-1, y)->getSpecies() == HUMAN) {
                     delete (city->grid[x-1][y]);
                     eaten = true;
+                    starveCount=0;
+                }
+                else{
+                    starveCount++;
                 }
                 city->setOrganism(this, x-1, y);
                 city->grid[x-1][y] = this;
                 this->x--;
+
                 break;
             case NORTHWEST:
-                if (city->getOrganism(x-1, y-1)->getSpecies() == HUMAN) {
+                if (city->getOrganism(x-1, y-1)!= nullptr&&city->getOrganism(x-1, y-1)->getSpecies() == HUMAN) {
                     delete (city->grid[x-1][y-1]);
                     eaten = true;
+                    starveCount=0;
+                }
+                else{
+                    starveCount++;
                 }
                 city->setOrganism(this, x-1, y-1);
                 city->grid[x-1][y-1] = this;
                 this->x--;
                 break;
-        }
-        city->setOrganism(nullptr, x, y);
+        }//END SWITCH
+
+        city->grid[x][y]= nullptr;
         timeSteps++;
-        starveCount++;
-        //reset the moved flag
         moved = true;
     }//END IF DIRECTIONS IS NOT EMPTY
-
+    else{
+        cout<<"nothing change"<<endl;
+    }
 }//END OF MOVE FUNCTION
 
 int Zombie ::getSpecies() {

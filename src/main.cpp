@@ -34,8 +34,9 @@ int main() {
    // this_thread::sleep_for( interval ) ;
 
 
-return 0;
-}
+    return 0;
+
+} //SIGSEGV (Segmentation fault) at the end of the code
 
 void gameRules(){
     string message =

@@ -29,7 +29,6 @@ Organism ::Organism(City *city, int x, int y) {
 
 ostream& operator<<( ostream &output, Organism *organism ){
     cout<<"\nFriend function to overload the << operator for organism"<<endl;
-    City ::Col(HUMAN_COLOR);
     output << organism->getSpeciesCH();
     return output;
 }
