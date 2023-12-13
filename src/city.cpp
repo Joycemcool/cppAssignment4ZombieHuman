@@ -105,7 +105,6 @@ void City ::move() {
         }
     }
 
-
     //Random selection of Human/Zombie for movement, loop 400 times
     for(auto z = randomTable.begin(); z != randomTable.end(); ++z) {
 
@@ -123,46 +122,13 @@ void City ::move() {
                 { //NULL HOW CAN IT COME HERE
                     delete pOrganism;
                     setOrganism(nullptr,i,j);
+                } else{
+                    pOrganism->spawn(); //THIRD CHECK BREED
                 }
-                pOrganism->spawn(); //THIRD CHECK BREED
             }
         }
-//        if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH() == HUMAN_CH)) {
-//            if (!grid[i][j]->moved) {
-//                grid[i][j]->move();//MOVE THE HUMAN
-//            }
-//        }
-
-//        if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
-//            if (!grid[i][j]->moved) { //if they haven't moved
-//                grid[i][j]->move(); //First move the Zombie! aka eat
-//            }
-//        }
-
     } //END OF FOR LOOP
 
-    //Loop through the world to check for starving Zombie
-//    for (int i = 0; i < GRIDSIZE; ++i) {
-//        for (int j = 0; j < GRIDSIZE; ++j) {
-//            if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
-//                if (grid[i][j]->starved()) {
-//                    setOrganism(nullptr,i,j);
-//                    new Human(this,i,j);
-////                    grid[i][j] = new Human(this,i,j); //??  replace with an Human
-//                }
-//            }
-//        }
-//    }
-
-    //(5) Loop through the world and check for breeding/recruiting
-//    for (int i = 0; i < GRIDSIZE; ++i) {
-//        for (int j = 0; j < GRIDSIZE; ++j) {
-//            //make sure the organism moved
-//            if (grid[i][j] != nullptr && grid[i][j]->moved) {
-//                grid[i][j]->spawn(); //?? Is this right way for both species
-//            }
-//        }
-//    }
 }//END CITY MOVE FUNCTION
 
 ostream& operator<<( ostream &output, City &city ){
