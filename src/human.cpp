@@ -120,16 +120,16 @@ void Human ::spawn() {
             auto randomDirection = static_cast<Direction>(direction[0]);
             switch (randomDirection) {
                 case NORTH:
-                    new Human(city, x, y - 1);
+                    city->setOrganism(new Human(city, x, y - 1),x,y-1);
                     break;
                 case SOUTH:
-                    new Human(city, x, y + 1);
+                    city->setOrganism(new Human(city, x, y + 1),x,y+1);
                     break;
                 case WEST:
-                    new Human(city, x - 1, y);
+                    city->setOrganism(new Human(city, x-1, y),x-1,y);
                     break;
                 case EAST:
-                    new Human(city, x + 1, y);
+                    city->setOrganism(new Human(city, x+1, y),x+1,y);
                     break;
             }
         }

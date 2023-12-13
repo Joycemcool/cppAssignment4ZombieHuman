@@ -120,8 +120,10 @@ void City ::move() {
                 //SECOND CHECK IF IT'S STARVED
                 if (pOrganism->starved())
                 { //NULL HOW CAN IT COME HERE
-                    delete pOrganism;
+                    delete getOrganism(i,j);
                     setOrganism(nullptr,i,j);
+                    cout<<"**********Delete one Zombie**********"<<endl;
+                    //starved doesn't work
                 } else{
                     pOrganism->spawn(); //THIRD CHECK BREED
                 }
