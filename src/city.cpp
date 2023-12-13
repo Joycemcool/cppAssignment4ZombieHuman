@@ -124,7 +124,7 @@ void City ::move() {
                     grid[i][j]= nullptr;
                     cout<<"**********Delete one Zombie**********"<<endl;
                 }
-                //*******************************************//
+                //********************************************//
                 pOrganism->spawn(); //THIRD CHECK BREED
             }
         }
