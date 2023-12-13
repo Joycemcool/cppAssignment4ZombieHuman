@@ -26,8 +26,7 @@ public:
     void setOrganism( Organism *organism, int x, int y );
     void move();
     friend ostream& operator<<( ostream &output, City &city );
-
-    Organism *grid[GRID_HEIGHT][GRID_WIDTH];
+    Organism *grid[GRID_HEIGHT][GRID_WIDTH] = {{nullptr}};
 };
 
 #endif //ZOMBIEHUMAN_CITY_H

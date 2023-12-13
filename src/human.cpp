@@ -18,9 +18,16 @@ Human ::Human() : Organism(){
 //Overloaded Constructor
 Human ::Human(City *city, int x, int y) : Organism(city,x,y ){
     //INTENTIONALLY LEAVE BLANK
+    this->city=city;
+}
+
+bool Human::isTurned() {
+    return turned;
 }
 //Overloaded Move()
 void Human ::move() {
+
+    turned = true;
 
     //USE A VECTOR TO RANDOM DIRECTION,HUMAN CAN ONLY MOVE TO EMPTY CELLS
     vector <int> directions;
@@ -134,6 +141,4 @@ bool Human ::starved() {
     return false;
 }
 
-Human :: ~Human()  {
-
-}
+Human :: ~Human()  = default;

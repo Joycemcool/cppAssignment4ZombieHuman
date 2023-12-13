@@ -25,7 +25,7 @@ protected:
     City *city;
     int timeSteps;
     enum Direction { NORTH, NORTHEAST,EAST,SOUTHEAST, SOUTH,SOUTHWEST,WEST,NORTHWEST };
-
+    bool turned;
 
 public:
     int x;
@@ -40,6 +40,7 @@ public:
     virtual int getSpecies() = 0; //CODE IN DERIVED CLASS
     bool moved;
     enum Species {ZOMBIE, HUMAN, NUM_SPECIES};
+    virtual bool isTurned()=0;
     friend ostream& operator<<( ostream &output, Organism *organism );
 };
 

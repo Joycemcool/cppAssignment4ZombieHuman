@@ -46,23 +46,18 @@ void Col(int c)
     HANDLE  hConsole;
     hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hConsole, c);
-    return;
 }
 
 City ::City() {
     cout<<"City Default Constructor called, fill with nullptr and start organisms\n"<<endl;
-    //fill the word with null objects (empty spaces)
-    for (int i = 0; i < GRID_HEIGHT; ++i) {
-        for (int j = 0; j < GRID_WIDTH; ++j) {
-            grid[i][j] = nullptr; //fills organism array (in world class) with null values
-        }
-    }
+
+//    grid
     int count=0;
     while (count < HUMAN_STARTCOUNT) {
         int x = rand() % GRID_WIDTH;
         int y = rand() % GRID_HEIGHT;
-        if(grid[x][y]==nullptr){
-            grid[x][y] = new Human(this,x,y);
+        if(grid[x][y] ==nullptr){
+            setOrganism(new Human(this,x,y), x, y);
             count++;
         }
     }
@@ -73,19 +68,14 @@ City ::City() {
         int x = rand() % GRID_WIDTH;
         int y = rand() % GRID_HEIGHT;
         if(grid[x][y]==nullptr){
-            grid[x][y] = new Zombie(this,x,y);
+            setOrganism(new Zombie(this,x,y),x,y);
             count++;
         }
     }
-
 } //END CITY DEFAULT CONSTRUCTOR
 
 Organism* City ::getOrganism(int x, int y) {
-    //check to make sure in the bounds of the world
-    if (grid[x][y]!= nullptr) {
-        return grid[x][y];
-    }
-    return nullptr;
+        return this->grid[x][y];
 }
 
 //Fills the cell at coordinates x and y with an object
@@ -95,8 +85,6 @@ void City ::setOrganism(Organism *organism, int x, int y) {
 
 //Need move() and friend ostream& operator
 void City ::move() {
-
-    cout<<zombieCount()<<endl;
     vector <int> randomTable;
     for(int i = 0; i < 400; i++) {
         randomTable.push_back(i);
@@ -107,10 +95,12 @@ void City ::move() {
     shuffle(randomTable.begin(),randomTable.end(),default_random_engine(seed));
 
     //(1) First reset all organisms so none of them have moved
+    //NEED TO SET TURNED HERE?
     for (int i = 0; i < GRIDSIZE; ++i) {
         for (int j = 0; j < GRIDSIZE; ++j) {
-            if (grid[i][j] != nullptr) {
-                grid[i][j]->moved = false;
+            Organism *pOrganism = getOrganism(i,j);
+            if (pOrganism != nullptr) {
+                pOrganism->moved = false;
             }
         }
     }
@@ -122,43 +112,58 @@ void City ::move() {
         int i = *z / 20; //for row
         int j = *z % 20; //for column
 
-        //HARD CODE THE VALUE OF ENUM
-        if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH() == HUMAN_CH)) {
-            if (!grid[i][j]->moved) {
-                grid[i][j]->move();//MOVE THE HUMAN
+        //?? GRID NULL STILL CAN MEET THE CONDITION
+        //Is the grid not link to the data?
+        Organism *pOrganism = getOrganism(i,j);
+        if (pOrganism != nullptr) {
+            if (!pOrganism->moved) {
+                pOrganism->move(); //FIRST MOVE
+                //SECOND CHECK IF IT'S STARVED
+                if (pOrganism->starved())
+                { //NULL HOW CAN IT COME HERE
+                    delete pOrganism;
+                    setOrganism(nullptr,i,j);
+                }
+                pOrganism->spawn(); //THIRD CHECK BREED
             }
         }
+//        if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH() == HUMAN_CH)) {
+//            if (!grid[i][j]->moved) {
+//                grid[i][j]->move();//MOVE THE HUMAN
+//            }
+//        }
 
-        if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
-            if (!grid[i][j]->moved) { //if they haven't moved
-                grid[i][j]->move(); //First move the Zombie! aka eat
-            }
-        }
-    }
+//        if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
+//            if (!grid[i][j]->moved) { //if they haven't moved
+//                grid[i][j]->move(); //First move the Zombie! aka eat
+//            }
+//        }
+
+    } //END OF FOR LOOP
 
     //Loop through the world to check for starving Zombie
-    for (int i = 0; i < GRIDSIZE; ++i) {
-        for (int j = 0; j < GRIDSIZE; ++j) {
-            if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
-                if (grid[i][j]->starved()) {
-                    setOrganism(nullptr,i,j);
-                    new Human(this,i,j);
-//                    grid[i][j] = new Human(this,i,j); //??  replace with an Human
-                }
-            }
-        }
-    }
+//    for (int i = 0; i < GRIDSIZE; ++i) {
+//        for (int j = 0; j < GRIDSIZE; ++j) {
+//            if ((grid[i][j] != nullptr) && (grid[i][j]->getSpeciesCH()==ZOMBIE_CH)) {
+//                if (grid[i][j]->starved()) {
+//                    setOrganism(nullptr,i,j);
+//                    new Human(this,i,j);
+////                    grid[i][j] = new Human(this,i,j); //??  replace with an Human
+//                }
+//            }
+//        }
+//    }
 
     //(5) Loop through the world and check for breeding/recruiting
-    for (int i = 0; i < GRIDSIZE; ++i) {
-        for (int j = 0; j < GRIDSIZE; ++j) {
-            //make sure the organism moved
-            if (grid[i][j] != nullptr && grid[i][j]->moved) {
-                grid[i][j]->spawn(); //?? Is this right way for both species
-            }
-        }
-    }
-}
+//    for (int i = 0; i < GRIDSIZE; ++i) {
+//        for (int j = 0; j < GRIDSIZE; ++j) {
+//            //make sure the organism moved
+//            if (grid[i][j] != nullptr && grid[i][j]->moved) {
+//                grid[i][j]->spawn(); //?? Is this right way for both species
+//            }
+//        }
+//    }
+}//END CITY MOVE FUNCTION
 
 ostream& operator<<( ostream &output, City &city ){
     cout<<"\nCity Friend function to overload the << operator"<<endl;

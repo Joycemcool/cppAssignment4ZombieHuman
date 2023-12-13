@@ -22,5 +22,7 @@ public:
     void spawn() override;
 
     bool starved() override;
+
+    bool isTurned();
 };
 #endif //ZOMBIEHUMAN_HUMAN_H

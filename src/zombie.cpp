@@ -14,6 +14,7 @@
 //Default Constructor
 Zombie ::Zombie() :Organism() {
    //INTENTIONALLY LEFT BLANK
+
    starveCount=0;
    eaten = false;
    breedCount= false;
@@ -21,14 +22,21 @@ Zombie ::Zombie() :Organism() {
 
 Zombie ::Zombie( City *city, int x, int y ) :Organism(city, x, y){
     //Figure out what's inside the default constructor
+    this->city=city;
     starveCount=0;
     eaten= false;
     breedCount= false;
 }
 
+bool Zombie::isTurned() {
+    return turned; //What's the difference of turned and
+}
+
 
 void Zombie ::move() {
     //USE A VECTOR TO RANDOM DIRECTION
+    turned = true; //What's the fuction here?
+
     vector <int> directions;
     if(y-1 >=0 && (city->getOrganism(x,y-1)== nullptr||city->getOrganism(x,y-1)->getSpecies()==HUMAN)){
         directions.push_back(NORTH); //out of reach
@@ -54,13 +62,12 @@ void Zombie ::move() {
 
     unsigned seed = chrono::system_clock::now().time_since_epoch().count();
     shuffle(directions.begin(),directions.end(),default_random_engine(seed));
-    auto randomDirection = static_cast<Direction>(directions[0]);
 
     if(!directions.empty()){
+        auto randomDirection = static_cast<Direction>(directions[0]);
         switch (randomDirection) {
             case NORTH:
                 if (city->getOrganism(x, y-1)!= nullptr&& city->getOrganism(x, y-1)->getSpecies() == HUMAN) {
-//                    delete city->grid[x][y-1];
                     city->setOrganism(nullptr,x,y-1);
                     eaten = true;
                     starveCount=0;
@@ -83,9 +90,9 @@ void Zombie ::move() {
                 city->setOrganism(this, x+1, y-1);
                 this->x++, y--;
                 break;
-            case EAST://ok 17 11 null
+            case EAST:
                 if (city->getOrganism(x+1, y)!= nullptr&&city->getOrganism(x+1, y)->getSpecies() == HUMAN) {
-                    city->setOrganism(nullptr,x+1,y);
+                    city->setOrganism(nullptr,x+1,y); //set human null
                     eaten = true;
                     starveCount=0;
                 }
@@ -154,7 +161,7 @@ void Zombie ::move() {
                 else{
                     starveCount++;
                 }
-                city->setOrganism(this,x-1,y-1);
+                city->setOrganism(this,x-1,y-1); //Set Zombie this position
                 this->x--,y--;
                 break;
         }//END SWITCH
@@ -236,7 +243,6 @@ void Zombie::spawn() {
                 case SOUTHEAST:
                     city->setOrganism(nullptr,x+1,y+1);
                     new Zombie(city, x+1, y+1);
-                    timeSteps = 0;
                     break;
                 case SOUTH:
                     city->setOrganism(nullptr,x,y+1);
@@ -263,10 +269,9 @@ void Zombie::spawn() {
             //If no human around
             cout<<"Zombie no breed with breed count available"<<endl;
             }
+        //BREED COUNT PROBLEM NOT SOLVED.
 
     }//END IF TIMESTEPS CONDITON
-//The breed counter is a separate variable. When it reaches 8 it stays there
-// until the zombie can bite someone. Once they bite someone, the counter is reset to 0.
 }//END SPAWN METHOD
 
 Zombie :: ~Zombie()  = default;

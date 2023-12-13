@@ -13,6 +13,7 @@ Organism ::Organism() {
     city = nullptr;
     moved = false;
     timeSteps=0;
+    turned= false;
 }
 
 //OVERLOADED CONSTRUCTOR CREATE AND ORGANISM IN THE GRID ARRAY
@@ -33,6 +34,4 @@ ostream& operator<<( ostream &output, Organism *organism ){
     return output;
 }
 
-Organism :: ~Organism() {
-//    delete city;
-};
+Organism :: ~Organism() {};
