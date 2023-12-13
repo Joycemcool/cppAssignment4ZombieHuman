@@ -69,10 +69,6 @@ void Zombie ::move() {
         city->setOrganism(nullptr,x,y);
         switch (randomDirection) {
             case NORTH:
-//                cout<<"toSwitch NORTH"<<endl;
-//                cout<<"Before x "<<x<<endl;
-//                cout<<"Before y "<<y<<endl;
-
                 if (city->getOrganism(x, y-1)!= nullptr&& city->getOrganism(x, y-1)->getSpecies() == HUMAN) {
                     delete city->getOrganism(x,y-1);
                     eaten = true;
@@ -83,14 +79,8 @@ void Zombie ::move() {
                 }
                 city->setOrganism(this, x, y-1);
                 this->y--;
- //Zombie seems doesn't move
-//                cout<<"After x "<<x<<endl;
-//                cout<<"After y "<<y<<endl;
                 break;
             case NORTHEAST:
-//                cout<<"toSwitch NORTHEAST"<<endl;
-//                cout<<"Before x "<<x<<endl;
-//                cout<<"Before y "<<y<<endl;
                 if (city->getOrganism(x+1, y-1)!= nullptr&&city->getOrganism(x+1, y-1)->getSpecies() == HUMAN) {
                     delete city->getOrganism(x+1,y-1);
                     eaten = true;
@@ -101,13 +91,8 @@ void Zombie ::move() {
                 }
                 city->setOrganism(this, x+1, y-1);
                 this->x++, y--;
-//                cout<<"After x "<<x<<endl;
-//                cout<<"After y "<<y<<endl;
                 break;
             case EAST:
-//                cout<<"toSwitch EAST"<<endl;
-//                cout<<"Before x "<<x<<endl;
-//                cout<<"Before y "<<y<<endl;
                 if (city->getOrganism(x+1, y)!= nullptr&&city->getOrganism(x+1, y)->getSpecies() == HUMAN) {
                     delete city->getOrganism(x+1,y);
                     eaten = true;
@@ -118,13 +103,8 @@ void Zombie ::move() {
                 }
                 city->setOrganism(this, x+1, y);
                 this->x++;
-//                cout<<"After x "<<x<<endl;
-//                cout<<"After y "<<y<<endl;
                 break;
             case SOUTHEAST:
-//                cout<<"toSwitch SOUTHEAST"<<endl;
-//                cout<<"Before x "<<x<<endl;
-//                cout<<"Before y "<<y<<endl;
                 if (city->getOrganism(x+1, y+1)!= nullptr&&city->getOrganism(x+1, y+1)->getSpecies() == HUMAN) {
                     delete city->getOrganism(x+1,y+1);
                     eaten = true;
@@ -135,13 +115,9 @@ void Zombie ::move() {
                 }
                 city->setOrganism(this, x+1, y+1);
                 this->x++,y++;
-//                cout<<"After x "<<x<<endl;
-//                cout<<"After y "<<y<<endl;
+
                 break;
             case SOUTH:
-                cout<<"toSwitch SOUTH"<<endl;
-                cout<<"Before x "<<x<<endl;
-                cout<<"Before y "<<y<<endl;
                 if (city->getOrganism(x, y+1)!= nullptr&&city->getOrganism(x, y+1)->getSpecies() == HUMAN) {
                     delete city->getOrganism(x,y+1);
                     eaten = true;
@@ -152,13 +128,8 @@ void Zombie ::move() {
                 }
                 city->setOrganism(this, x, y+1);
                 this->y++;
-//                cout<<"After x "<<x<<endl;
-//                cout<<"After y "<<y<<endl;
                 break;
             case SOUTHWEST:
-//                cout<<"toSwitch SOUTHWEST"<<endl;
-//                cout<<"Before x "<<x<<endl;
-//                cout<<"Before y "<<y<<endl;
                 if (city->getOrganism(x-1, y+1)!= nullptr&&city->getOrganism(x-1, y+1)->getSpecies() == HUMAN) {
                     delete city->getOrganism(x-1,y+1);
                     eaten = true;
@@ -169,13 +140,8 @@ void Zombie ::move() {
                 }
                 city->setOrganism(this, x-1, y+1);
                 this->x--,y++;
-//                cout<<"After x "<<x<<endl;
-//                cout<<"After y "<<y<<endl;
                 break;
             case WEST:
-//                cout<<"toSwitch WEST"<<endl;
-//                cout<<"Before x "<<x<<endl;
-//                cout<<"Before y "<<y<<endl;
                 if (city->getOrganism(x-1, y)!= nullptr&&city->getOrganism(x-1, y)->getSpecies() == HUMAN) {
                     delete city->getOrganism(x-1,y);
                     eaten = true;
@@ -186,13 +152,8 @@ void Zombie ::move() {
                 }
                 city->setOrganism(this, x-1, y);
                 this->x--;
-//                cout<<"After x "<<x<<endl;
-//                cout<<"After y "<<y<<endl;
                 break;
             case NORTHWEST:
-//                cout<<"toSwitch NORTHWEST"<<endl;
-//                cout<<"Before x "<<x<<endl;
-//                cout<<"Before y "<<y<<endl;
                 if (city->getOrganism(x-1, y-1)!= nullptr&&city->getOrganism(x-1, y-1)->getSpecies() == HUMAN) {
                     delete city->getOrganism(x-1,y-1);
                     eaten = true;
@@ -203,17 +164,13 @@ void Zombie ::move() {
                 }
                 city->setOrganism(this,x-1,y-1);
                 this->x--,y--;
-//                cout<<"After x "<<x<<endl;
-//                cout<<"After y "<<y<<endl;
                 break;
         }//END SWITCH
-        //city->setOrganism(nullptr,x,y);
         timeSteps++;
         moved = true;
         if(timeSteps>=8){
             breedCount= true;
         }
-        cout<<x<<y<<endl;
     }//END IF DIRECTIONS IS NOT EMPTY
     else{
         cout<<"nothing change"<<endl;
@@ -238,6 +195,10 @@ bool Zombie::starved() {
         return false;
     }
 }
+
+//void Zombie :: removeStarved(){
+//    this= nullptr;
+//}
 void Zombie::spawn() {
     if (timeSteps >= ZOMBIE_BREED && eaten && breedCount){
         vector <int> directions;

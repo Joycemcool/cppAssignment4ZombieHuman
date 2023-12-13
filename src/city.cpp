@@ -111,22 +111,21 @@ void City ::move() {
         int i = *z / 20; //for row
         int j = *z % 20; //for column
 
-        //?? GRID NULL STILL CAN MEET THE CONDITION
-        //Is the grid not link to the data?
+
         Organism *pOrganism = getOrganism(i,j);
         if (pOrganism != nullptr) {
             if (!pOrganism->moved) {
                 pOrganism->move(); //FIRST MOVE
-                //SECOND CHECK IF IT'S STARVED
+                //?? CANNOT DELETE ZOMBIE SECOND CHECK IF IT'S STARVED
+                //******************************************//
                 if (pOrganism->starved())
-                { //NULL HOW CAN IT COME HERE
-                    delete getOrganism(i,j);
-                    setOrganism(nullptr,i,j);
+                {
+                    this->setOrganism(nullptr,i,j);
+                    grid[i][j]= nullptr;
                     cout<<"**********Delete one Zombie**********"<<endl;
-                    //starved doesn't work
-                } else{
-                    pOrganism->spawn(); //THIRD CHECK BREED
                 }
+                //******************************************//
+                pOrganism->spawn(); //THIRD CHECK BREED
             }
         }
     } //END OF FOR LOOP

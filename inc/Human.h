@@ -22,6 +22,7 @@ public:
     void spawn() override;
 
     bool starved() override;
+//    void removeStarved();
 
     bool isTurned();
 };

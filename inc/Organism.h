@@ -41,6 +41,7 @@ public:
     bool moved;
     enum Species {ZOMBIE, HUMAN, NUM_SPECIES};
     virtual bool isTurned()=0;
+//    virtual void removeStarved()=0;
     friend ostream& operator<<( ostream &output, Organism *organism );
 };
 
