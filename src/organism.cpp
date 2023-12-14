@@ -29,8 +29,13 @@ Organism ::Organism(City *city, int x, int y) {
 }
 
 ostream& operator<<( ostream &output, Organism *organism ){
-    cout<<"\nFriend function to overload the << operator for organism"<<endl;
-    output << organism->getSpeciesCH();
+    if(organism!= nullptr){
+        output << organism->getSpeciesCH();
+
+    }
+    else{
+        output << '_';
+    }
     return output;
 }
 

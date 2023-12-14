@@ -156,23 +156,26 @@ void City ::move() {
 }//END CITY MOVE FUNCTION
 
 ostream& operator<<( ostream &output, City &city ){
-    cout<<"\nCity Friend function to overload the << operator"<<endl;
     for (auto & i : city.grid) {
         for (auto & j : i) {
-            if (j != nullptr)
-            {
-                if(j->getSpeciesCH()==ZOMBIE_CH){
-                    Col(ZOMBIE_COLOR);
-                    output <<"\033[38;5;"<<ZOMBIE_COLOR<<"m"<<j->getSpeciesCH() << "\033[0m"<<' ';
-                }
-                else{
-                    Col(HUMAN_COLOR);
-                    output <<"\033[38;5;"<<HUMAN_COLOR<<"m"<<j->getSpeciesCH() << "\033[0m"<<' ';
-                }
-            }
-            else {
-                output << SPACE_CH << ' ';
-            }
+//
+//            if (j != nullptr)
+//            {
+//                if(j->getSpeciesCH()==ZOMBIE_CH){
+//                    Col(ZOMBIE_COLOR);
+////                    cout<<j;
+////                    output <<"\033[38;5;"<<ZOMBIE_COLOR<<"m"<<j->getSpeciesCH() << "\033[0m"<<' ';
+//
+//                }
+//                else{
+//                    Col(HUMAN_COLOR);
+//                    output <<"\033[38;5;"<<HUMAN_COLOR<<"m"<<j->getSpeciesCH() << "\033[0m"<<' ';
+//                }
+//            }
+//            else {
+//                output << SPACE_CH << ' ';
+//            }
+        output<<j<<" ";
         }
         output << '\n';
     }

@@ -44,7 +44,7 @@ int main() {
         int gameCount=1;
 //        this_thread::sleep_for(interval);
         do{
-            cout<<"This is generation " <<gameCount<<endl;
+            cout<<endl<<"!!New Generation!!This is generation  " <<gameCount<<endl;
             cout<<"Human count in this generation "<<city.humanCount()<<endl;
             cout<<"Zombie count in this generation "<<city.zombieCount()<<endl;
             cout<<"Before move"<<endl;
@@ -67,10 +67,7 @@ int main() {
     } else{
         cout<<"Game over"<<endl;
     }
-
-    city.move(); //It might need a time interval here
-
-    //this_thread::sleep_for(3s);
+    this_thread::sleep_for(3s);
     //chrono::seconds interval( 1 ) ; // 1 second
    // this_thread::sleep_for( interval ) ;
 
