@@ -7,6 +7,7 @@
 #include <random>
 #include <algorithm>
 #include "../inc/Zombie.h"
+#include "../inc/Human.h"
 #include "../inc/Organism.h"
 #include "../inc/City.h"
 #include "../inc/GameSpecs.h"
@@ -185,6 +186,19 @@ char Zombie ::getSpeciesCH() {
     return ZOMBIE_CH;
 }//END GETSPECIESCH function
 
+//TRY TO DO SELF DESTROY
+
+//void Zombie::starved() {
+//    //starve
+//    if (starveCount >= ZOMBIE_STARVE && !eaten) {
+//        city->setOrganism(nullptr,x,y);
+//        city->setOrganism(new Human(city,x,y),x,y);
+//        cout<<"Deleted Zombie x "<<x<<endl;
+//        cout<<"Deleted Zombie y "<<y<<endl;
+//        cout<<"Inside Zombie Zombie Count" <<city->zombieCount()<<endl;
+//        cout<<"Inside Zombie Human Count" <<city->humanCount()<<endl;
+//    }
+//}
 bool Zombie::starved() {
     //starve
     if (starveCount >= ZOMBIE_STARVE && !eaten) {
@@ -266,7 +280,7 @@ void Zombie::spawn() {
                     break;
             }//END SWITCH
             breedCount= false;
-            timeSteps = 0; //DOUBLE CHECK IF TIMESTEPS INCREMENT OR NOT
+//            timeSteps = 0; //DOUBLE CHECK IF TIMESTEPS INCREMENT OR NOT
         }//END DIRECTIONS EMPTY
         else{
             //If no human around

@@ -197,6 +197,8 @@ CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj: \
  C:/Users/joyce/Documents/Code/ZombieHuman2/inc/City.h \
  C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Organism.h \
  C:/Users/joyce/Documents/Code/ZombieHuman2/inc/City.h \
+ C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Human.h \
+ C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Organism.h \
  C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Organism.h \
  C:/Users/joyce/Documents/Code/ZombieHuman2/inc/City.h \
  C:/Users/joyce/Documents/Code/ZombieHuman2/inc/GameSpecs.h

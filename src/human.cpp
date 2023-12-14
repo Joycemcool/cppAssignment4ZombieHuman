@@ -76,10 +76,11 @@ void Human ::move() {
                 if (x < GRIDSIZE-1 && city->getOrganism(x+1, y) == nullptr){
                     city->setOrganism(this,x+1,y);
                     city->setOrganism(nullptr,x,y);
-                    x++;//redumdom?
+                    x++;
                 }
                 break;
         }//END SWITCH STATEMENT
+        turned= false;
         moved= true;
         timeSteps++;
     }//END IF DIRECTIONS EMPTY

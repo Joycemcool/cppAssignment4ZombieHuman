@@ -63,11 +63,12 @@ int main() {
             cout<<"After move"<<endl;
             cout<<city;
             gameCount++;
+            this_thread::sleep_for(2s);
         }while(!gameOver);
     } else{
         cout<<"Game over"<<endl;
     }
-    this_thread::sleep_for(3s);
+
     //chrono::seconds interval( 1 ) ; // 1 second
    // this_thread::sleep_for( interval ) ;
 

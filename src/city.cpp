@@ -132,19 +132,21 @@ void City ::move() {
                 //?? CANNOT DELETE ZOMBIE SECOND CHECK IF IT'S STARVED
                 //******************************************//
                 pOrganism->spawn(); //THIRD CHECK BREED
-                if (pOrganism->starved())
+//                if (pOrganism->timeSteps>=3)
+                if(pOrganism->starved())
                 {
                     this->setOrganism(nullptr,i,j);
-                    grid[i][j]= nullptr;
-                    cout<<"Deleted Zombie x "<<i<<endl;
-                    cout<<"Deleted Zombie y "<<j<<endl;
-                    cout<<"**********Delete one Zombie**********"<<endl;
+                    this->setOrganism(new Human(this, i,j),i,j);
+//                    pOrganism->starved();
+//                    grid[i][j]= nullptr;
+//                    cout<<"Deleted Zombie x "<<i<<endl;
+//                    cout<<"Deleted Zombie y "<<j<<endl;
+//                    cout<<"**********Delete one Zombie**********"<<endl;
                     if(grid[i][j]== nullptr){
                         cout<<"Deleted"<<endl;
                        cout<< "updated Zombie count is "<<this->zombieCount()<<endl;
                     }
 //                    char ch=this->getOrganism(i,j)->getSpeciesCH();
-
 //                    cout<<"In the deleted zombie position is " <<endl;
                 }
                 //********************************************//
@@ -159,23 +161,29 @@ ostream& operator<<( ostream &output, City &city ){
     for (auto & i : city.grid) {
         for (auto & j : i) {
 //
-//            if (j != nullptr)
-//            {
-//                if(j->getSpeciesCH()==ZOMBIE_CH){
+            if (j != nullptr)
+            {
+                if(j->getSpeciesCH()==ZOMBIE_CH){
 //                    Col(ZOMBIE_COLOR);
-////                    cout<<j;
-////                    output <<"\033[38;5;"<<ZOMBIE_COLOR<<"m"<<j->getSpeciesCH() << "\033[0m"<<' ';
+//                  output <<"\033[38;5;"<<ZOMBIE_COLOR<<"m"<<j->getSpeciesCH() << "\033[0m"<<' ';
+                    output <<"\033[38;5;"<<ZOMBIE_COLOR<<"m"<<j << "\033[0m"<<' ';
+
 //
-//                }
-//                else{
-//                    Col(HUMAN_COLOR);
+                }
+                else{
+                    Col(HUMAN_COLOR);
 //                    output <<"\033[38;5;"<<HUMAN_COLOR<<"m"<<j->getSpeciesCH() << "\033[0m"<<' ';
-//                }
-//            }
-//            else {
-//                output << SPACE_CH << ' ';
-//            }
-        output<<j<<" ";
+                    output <<"\033[38;5;"<<HUMAN_COLOR<<"m"<<j<< "\033[0m"<<' ';
+
+                }
+            }
+            else {
+                 Col(HUMAN_COLOR);
+//                output << SPACE_CH<< ' ';
+                output << j<< ' ';
+
+            }
+//        output<<j<<" ";
         }
         output << '\n';
     }
@@ -184,19 +192,9 @@ ostream& operator<<( ostream &output, City &city ){
 
 //DESTRUCTOR
 City::~City() {
-    // Iterate through each cell in the grid
-//    for (int i = 0; i < GRID_HEIGHT; ++i) {
-//        for (int j = 0; j < GRID_WIDTH; ++j) {
-//            // Delete the organism at the current cell
-//            delete grid[i][j];
-//            // Set the cell to nullptr to avoid accessing deleted memory
-//            grid[i][j] = nullptr;
-//        }
-//    }
 }
 
 //COUNT HUMAN
-//int City::humanCount(City &city) {
 int City::humanCount() {
     int count = 0;
 //    char c;
