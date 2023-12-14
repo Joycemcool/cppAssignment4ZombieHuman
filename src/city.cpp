@@ -16,11 +16,12 @@
 #include "../inc/Human.h"
 #include "../inc/Zombie.h"
 #include "../inc/Organism.h"
-
+#include <random>
 using namespace std;
 class Organism;
 class Human;
 class Zombie;
+
 
 
 #include <iostream>
@@ -51,26 +52,38 @@ void Col(int c)
 City ::City() {
     cout<<"City Default Constructor called, fill with nullptr and start organisms\n"<<endl;
 
-//    grid
     int count=0;
+    random_device rd;
+    mt19937 mt(rd());
+    uniform_int_distribution<int> dist(0, GRID_WIDTH-1);
     while (count < HUMAN_STARTCOUNT) {
-        int x = rand() % GRID_WIDTH;
-        int y = rand() % GRID_HEIGHT;
+
+        int x = dist(mt);
+        int y = dist(mt);
         if(grid[x][y] ==nullptr){
             setOrganism(new Human(this,x,y), x, y);
             count++;
         }
     }
 
-    count=0;
+
     // Fill the grid with Zombies, equally in the Grid
-    while (count < ZOMBIE_STARTCOUNT) {
-        int x = rand() % GRID_WIDTH;
-        int y = rand() % GRID_HEIGHT;
-        if(grid[x][y]==nullptr){
-            setOrganism(new Zombie(this,x,y),x,y);
+    count=0;
+    std::vector<int> targetRows = {4, 7, 11, 15, 19};
+    int startJ = GRID_HEIGHT/2;
+    for(int i=0;i<ZOMBIE_STARTCOUNT && count < ZOMBIE_STARTCOUNT;++i){
+        int currentI = targetRows[i];
+        int currentJ = startJ;
+
+        while (currentJ < GRID_HEIGHT && grid[currentI][currentJ] != nullptr) {
+            currentJ++;
+        }
+        // Check if we found an available position
+        if (currentJ < GRID_HEIGHT) {
+            setOrganism(new Zombie(this, currentI, currentJ), currentI, currentJ);
             count++;
         }
+
     }
 } //END CITY DEFAULT CONSTRUCTOR
 
@@ -118,14 +131,24 @@ void City ::move() {
                 pOrganism->move(); //FIRST MOVE
                 //?? CANNOT DELETE ZOMBIE SECOND CHECK IF IT'S STARVED
                 //******************************************//
+                pOrganism->spawn(); //THIRD CHECK BREED
                 if (pOrganism->starved())
                 {
                     this->setOrganism(nullptr,i,j);
                     grid[i][j]= nullptr;
+                    cout<<"Deleted Zombie x "<<i<<endl;
+                    cout<<"Deleted Zombie y "<<j<<endl;
                     cout<<"**********Delete one Zombie**********"<<endl;
+                    if(grid[i][j]== nullptr){
+                        cout<<"Deleted"<<endl;
+                       cout<< "updated Zombie count is "<<this->zombieCount()<<endl;
+                    }
+//                    char ch=this->getOrganism(i,j)->getSpeciesCH();
+
+//                    cout<<"In the deleted zombie position is " <<endl;
                 }
                 //********************************************//
-                pOrganism->spawn(); //THIRD CHECK BREED
+
             }
         }
     } //END OF FOR LOOP
@@ -159,14 +182,14 @@ ostream& operator<<( ostream &output, City &city ){
 //DESTRUCTOR
 City::~City() {
     // Iterate through each cell in the grid
-    for (int i = 0; i < GRID_HEIGHT; ++i) {
-        for (int j = 0; j < GRID_WIDTH; ++j) {
-            // Delete the organism at the current cell
-            delete grid[i][j];
-            // Set the cell to nullptr to avoid accessing deleted memory
-            grid[i][j] = nullptr;
-        }
-    }
+//    for (int i = 0; i < GRID_HEIGHT; ++i) {
+//        for (int j = 0; j < GRID_WIDTH; ++j) {
+//            // Delete the organism at the current cell
+//            delete grid[i][j];
+//            // Set the cell to nullptr to avoid accessing deleted memory
+//            grid[i][j] = nullptr;
+//        }
+//    }
 }
 
 //COUNT HUMAN

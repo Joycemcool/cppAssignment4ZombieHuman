@@ -47,8 +47,8 @@ int main() {
             cout<<"This is generation " <<gameCount<<endl;
             cout<<"Human count in this generation "<<city.humanCount()<<endl;
             cout<<"Zombie count in this generation "<<city.zombieCount()<<endl;
+            cout<<"Before move"<<endl;
             cout<<city<<endl;
-            city.move();
             cout << "Enter [n] to see the next generation : Any other key to exit" << endl;
             cin >> userInput;
             if (userInput == "n") {
@@ -59,6 +59,9 @@ int main() {
                 //exit if user does not enter n
                 gameOver = true;
             }
+            city.move();
+            cout<<"After move"<<endl;
+            cout<<city;
             gameCount++;
         }while(!gameOver);
     } else{
