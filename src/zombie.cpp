@@ -173,9 +173,9 @@ void Zombie ::move() {
             breedCount= true;
         }
     }//END IF DIRECTIONS IS NOT EMPTY
-    else{
-        cout<<"nothing change"<<endl;
-    }
+//    else{
+//        cout<<"nothing change"<<endl;
+//    }
 }//END OF MOVE FUNCTION
 
 int Zombie ::getSpecies() {
@@ -282,10 +282,10 @@ void Zombie::spawn() {
             breedCount= false;
 //            timeSteps = 0; //DOUBLE CHECK IF TIMESTEPS INCREMENT OR NOT
         }//END DIRECTIONS EMPTY
-        else{
-            //If no human around
-            cout<<"Zombie no breed with breed count available"<<endl;
-            }
+//        else{
+//            //If no human around
+////            cout<<"Zombie no breed with breed count available"<<endl;
+//            }
         //BREED COUNT PROBLEM NOT SOLVED.
 
     }//END IF TIMESTEPS CONDITON

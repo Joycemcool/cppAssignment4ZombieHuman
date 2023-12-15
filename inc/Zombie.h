@@ -23,7 +23,7 @@ public:
     void spawn() override;
     bool breedCount;
     bool isTurned();
-    void removeStarved();
+//    void removeStarved();
 
 private:
     bool eaten;

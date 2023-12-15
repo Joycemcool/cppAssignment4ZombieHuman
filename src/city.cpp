@@ -127,30 +127,34 @@ void City ::move() {
 
         Organism *pOrganism = getOrganism(i,j);
         if (pOrganism != nullptr) {
+            if(pOrganism->starved())
+            {
+                this->setOrganism(nullptr,i,j);
+                this->setOrganism(new Human(this, i,j),i,j);
+                cout<<"Deleted Zombie x "<<i<<endl;
+
+            }
             if (!pOrganism->moved) {
                 pOrganism->move(); //FIRST MOVE
                 //?? CANNOT DELETE ZOMBIE SECOND CHECK IF IT'S STARVED
                 //******************************************//
                 pOrganism->spawn(); //THIRD CHECK BREED
 //                if (pOrganism->timeSteps>=3)
-                if(pOrganism->starved())
-                {
-                    this->setOrganism(nullptr,i,j);
-                    this->setOrganism(new Human(this, i,j),i,j);
+
+                   // delete this->getOrganism(i,j);
+
 //                    pOrganism->starved();
 //                    grid[i][j]= nullptr;
-//                    cout<<"Deleted Zombie x "<<i<<endl;
 //                    cout<<"Deleted Zombie y "<<j<<endl;
 //                    cout<<"**********Delete one Zombie**********"<<endl;
-                    if(grid[i][j]== nullptr){
-                        cout<<"Deleted"<<endl;
-                       cout<< "updated Zombie count is "<<this->zombieCount()<<endl;
-                    }
+//                    if(grid[i][j]== nullptr){
+//                        cout<<"Deleted"<<endl;
+//                       cout<< "updated Zombie count is "<<this->zombieCount()<<endl;
+//                    }
 //                    char ch=this->getOrganism(i,j)->getSpeciesCH();
 //                    cout<<"In the deleted zombie position is " <<endl;
-                }
-                //********************************************//
 
+                //********************************************//
             }
         }
     } //END OF FOR LOOP

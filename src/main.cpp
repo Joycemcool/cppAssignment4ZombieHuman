@@ -42,13 +42,31 @@ int main() {
 
     if(city.humanCount()>0&&city.zombieCount()>0){
         int gameCount=1;
-//        this_thread::sleep_for(interval);
         do{
             cout<<endl<<"!!New Generation!!This is generation  " <<gameCount<<endl;
             cout<<"Human count in this generation "<<city.humanCount()<<endl;
             cout<<"Zombie count in this generation "<<city.zombieCount()<<endl;
-            cout<<"Before move"<<endl;
+//            cout<<"Before move"<<endl;
             cout<<city<<endl;
+
+            //New code
+//            city.move();
+
+            //New code
+//            gameCount++;
+
+            //New code
+//            this_thread::sleep_for(0.5s);
+//            if (gameCount * 0.5 < 15) {
+//                // continue playing if the timer condition is not met
+//                gameOver = false;
+//            } else {
+//                // exit if the timer condition is met
+//                gameOver = true;
+//            }
+
+            //Above auto update
+
             cout << "Enter [n] to see the next generation : Any other key to exit" << endl;
             cin >> userInput;
             if (userInput == "n") {
@@ -63,7 +81,7 @@ int main() {
             cout<<"After move"<<endl;
             cout<<city;
             gameCount++;
-            this_thread::sleep_for(2s);
+
         }while(!gameOver);
     } else{
         cout<<"Game over"<<endl;
@@ -74,7 +92,7 @@ int main() {
 
     return 0;
 
-} //SIGSEGV (Segmentation fault) at the end of the code
+}
 
 
 
