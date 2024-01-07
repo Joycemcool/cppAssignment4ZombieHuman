@@ -3,8 +3,6 @@
 //
 
 #include "../inc/Organism.h"
-#include "../inc/City.h"
-#include "../inc/GameSpecs.h"
 
 //Creates a default organism
 Organism ::Organism() {
@@ -39,4 +37,4 @@ ostream& operator<<( ostream &output, Organism *organism ){
     return output;
 }
 
-Organism :: ~Organism() {};
+Organism :: ~Organism() = default;;

@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug"/>
+				<Option working_dir="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ZombieHuman">
-				<Option output="C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/ZombieHuman.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug"/>
+				<Option output="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/ZombieHuman.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -33,15 +33,15 @@
 					<Add directory="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 ZombieHuman"/>
-					<CompileFile command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 ZombieHuman"/>
+					<CompileFile command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ZombieHuman/fast">
-				<Option output="C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/ZombieHuman.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug"/>
+				<Option output="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/ZombieHuman.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -55,55 +55,55 @@
 					<Add directory="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 ZombieHuman/fast"/>
-					<CompileFile command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 ZombieHuman/fast"/>
+					<CompileFile command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug"/>
+				<Option working_dir="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug"/>
+				<Option working_dir="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="C:/Users/joyce/Documents/Code/ZombieHuman2/inc/City.h">
+		<Unit filename="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/inc/City.h">
 			<Option target="ZombieHuman"/>
 		</Unit>
-		<Unit filename="C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Zombie.h">
+		<Unit filename="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/inc/Zombie.h">
 			<Option target="ZombieHuman"/>
 		</Unit>
-		<Unit filename="C:/Users/joyce/Documents/Code/ZombieHuman2/src/city.cpp">
+		<Unit filename="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/src/city.cpp">
 			<Option target="ZombieHuman"/>
 		</Unit>
-		<Unit filename="C:/Users/joyce/Documents/Code/ZombieHuman2/src/human.cpp">
+		<Unit filename="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/src/human.cpp">
 			<Option target="ZombieHuman"/>
 		</Unit>
-		<Unit filename="C:/Users/joyce/Documents/Code/ZombieHuman2/src/main.cpp">
+		<Unit filename="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/src/main.cpp">
 			<Option target="ZombieHuman"/>
 		</Unit>
-		<Unit filename="C:/Users/joyce/Documents/Code/ZombieHuman2/src/organism.cpp">
+		<Unit filename="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/src/organism.cpp">
 			<Option target="ZombieHuman"/>
 		</Unit>
-		<Unit filename="C:/Users/joyce/Documents/Code/ZombieHuman2/src/zombie.cpp">
+		<Unit filename="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/src/zombie.cpp">
 			<Option target="ZombieHuman"/>
 		</Unit>
-		<Unit filename="C:/Users/joyce/Documents/Code/ZombieHuman2/CMakeLists.txt">
+		<Unit filename="C:/Users/joyce/Documents/Code/C++/ZombieHuman2/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

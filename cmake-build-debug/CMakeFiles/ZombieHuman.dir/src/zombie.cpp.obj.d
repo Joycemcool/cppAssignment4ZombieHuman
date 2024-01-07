@@ -1,5 +1,5 @@
 CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj: \
- C:\Users\joyce\Documents\Code\ZombieHuman2\src\zombie.cpp \
+ C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\zombie.cpp \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/vector \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_algobase.h \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
@@ -165,8 +165,8 @@ CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj: \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/node_handle.h \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/unordered_map.h \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/erase_if.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Zombie.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Organism.h \
+ C:/Users/joyce/Documents/Code/C++/ZombieHuman2/inc/Zombie.h \
+ C:/Users/joyce/Documents/Code/C++/ZombieHuman2/inc/Organism.h \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ostream \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/ios \
@@ -194,11 +194,7 @@ CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj: \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/City.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Organism.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/City.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Human.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Organism.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Organism.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/City.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/GameSpecs.h
+ C:/Users/joyce/Documents/Code/C++/ZombieHuman2/inc/City.h \
+ C:/Users/joyce/Documents/Code/C++/ZombieHuman2/inc/Organism.h \
+ C:/Users/joyce/Documents/Code/C++/ZombieHuman2/inc/City.h \
+ C:/Users/joyce/Documents/Code/C++/ZombieHuman2/inc/GameSpecs.h

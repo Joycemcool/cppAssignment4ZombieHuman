@@ -1,6 +1,6 @@
 CMakeFiles/ZombieHuman.dir/src/organism.cpp.obj: \
- C:\Users\joyce\Documents\Code\ZombieHuman2\src\organism.cpp \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Organism.h \
+ C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\organism.cpp \
+ C:/Users/joyce/Documents/Code/C++/ZombieHuman2/inc/Organism.h \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/iostream \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
@@ -136,7 +136,5 @@ CMakeFiles/ZombieHuman.dir/src/organism.cpp.obj: \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/ostream.tcc \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/istream \
  C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/istream.tcc \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/City.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/Organism.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/City.h \
- C:/Users/joyce/Documents/Code/ZombieHuman2/inc/GameSpecs.h
+ C:/Users/joyce/Documents/Code/C++/ZombieHuman2/inc/City.h \
+ C:/Users/joyce/Documents/Code/C++/ZombieHuman2/inc/Organism.h

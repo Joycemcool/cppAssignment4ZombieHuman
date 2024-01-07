@@ -21,26 +21,10 @@ using namespace std;
 class Organism;
 class Human;
 class Zombie;
-
-
-
-#include <iostream>
-#include <windows.h>
-#include <conio.h>
 using namespace std;
 
+//This doesn't work in laptop, works in lab machine
 void Col(int);
-
-//int main() {
-//    Col(12);
-//    cout << "RED" << std::endl;
-//    Col(7);
-//    cout << "WHITE" << std::endl;
-//    Col(3);
-//    cout << "BLUE" << std::endl;
-//    _getch();
-//    return 0;
-//}
 
 void Col(int c)
 {
@@ -126,45 +110,30 @@ void City ::move() {
 
 
         Organism *pOrganism = getOrganism(i,j);
+        //FIRST CHECK ZOMBIE STARVED
         if (pOrganism != nullptr) {
             if(pOrganism->starved())
             {
                 this->setOrganism(nullptr,i,j);
                 this->setOrganism(new Human(this, i,j),i,j);
-                cout<<"Deleted Zombie x "<<i<<endl;
 
             }
+
+        //SECOND CHECK SPAWN THEN MOVE
             if (!pOrganism->moved) {
-                pOrganism->move(); //FIRST MOVE
-                //?? CANNOT DELETE ZOMBIE SECOND CHECK IF IT'S STARVED
-                //******************************************//
                 pOrganism->spawn(); //THIRD CHECK BREED
-//                if (pOrganism->timeSteps>=3)
+                pOrganism->move();
 
-                   // delete this->getOrganism(i,j);
-
-//                    pOrganism->starved();
-//                    grid[i][j]= nullptr;
-//                    cout<<"Deleted Zombie y "<<j<<endl;
-//                    cout<<"**********Delete one Zombie**********"<<endl;
-//                    if(grid[i][j]== nullptr){
-//                        cout<<"Deleted"<<endl;
-//                       cout<< "updated Zombie count is "<<this->zombieCount()<<endl;
-//                    }
-//                    char ch=this->getOrganism(i,j)->getSpeciesCH();
-//                    cout<<"In the deleted zombie position is " <<endl;
-
-                //********************************************//
             }
         }
     } //END OF FOR LOOP
 
 }//END CITY MOVE FUNCTION
 
+//
 ostream& operator<<( ostream &output, City &city ){
     for (auto & i : city.grid) {
         for (auto & j : i) {
-//
             if (j != nullptr)
             {
                 if(j->getSpeciesCH()==ZOMBIE_CH){

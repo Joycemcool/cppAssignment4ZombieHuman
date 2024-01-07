@@ -52,10 +52,10 @@ RM = C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\joyce\Documents\Code\ZombieHuman2
+CMAKE_SOURCE_DIR = C:\Users\joyce\Documents\Code\C++\ZombieHuman2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\joyce\Documents\Code\ZombieHuman2\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\joyce\Documents\Code\C++\ZombieHuman2\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ZombieHuman.dir/depend.make
@@ -69,74 +69,74 @@ include CMakeFiles/ZombieHuman.dir/progress.make
 include CMakeFiles/ZombieHuman.dir/flags.make
 
 CMakeFiles/ZombieHuman.dir/src/main.cpp.obj: CMakeFiles/ZombieHuman.dir/flags.make
-CMakeFiles/ZombieHuman.dir/src/main.cpp.obj: C:/Users/joyce/Documents/Code/ZombieHuman2/src/main.cpp
+CMakeFiles/ZombieHuman.dir/src/main.cpp.obj: C:/Users/joyce/Documents/Code/C++/ZombieHuman2/src/main.cpp
 CMakeFiles/ZombieHuman.dir/src/main.cpp.obj: CMakeFiles/ZombieHuman.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\joyce\Documents\Code\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ZombieHuman.dir/src/main.cpp.obj"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZombieHuman.dir/src/main.cpp.obj -MF CMakeFiles\ZombieHuman.dir\src\main.cpp.obj.d -o CMakeFiles\ZombieHuman.dir\src\main.cpp.obj -c C:\Users\joyce\Documents\Code\ZombieHuman2\src\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\joyce\Documents\Code\C++\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ZombieHuman.dir/src/main.cpp.obj"
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZombieHuman.dir/src/main.cpp.obj -MF CMakeFiles\ZombieHuman.dir\src\main.cpp.obj.d -o CMakeFiles\ZombieHuman.dir\src\main.cpp.obj -c C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\main.cpp
 
 CMakeFiles/ZombieHuman.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ZombieHuman.dir/src/main.cpp.i"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\joyce\Documents\Code\ZombieHuman2\src\main.cpp > CMakeFiles\ZombieHuman.dir\src\main.cpp.i
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\main.cpp > CMakeFiles\ZombieHuman.dir\src\main.cpp.i
 
 CMakeFiles/ZombieHuman.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ZombieHuman.dir/src/main.cpp.s"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\joyce\Documents\Code\ZombieHuman2\src\main.cpp -o CMakeFiles\ZombieHuman.dir\src\main.cpp.s
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\main.cpp -o CMakeFiles\ZombieHuman.dir\src\main.cpp.s
 
 CMakeFiles/ZombieHuman.dir/src/city.cpp.obj: CMakeFiles/ZombieHuman.dir/flags.make
-CMakeFiles/ZombieHuman.dir/src/city.cpp.obj: C:/Users/joyce/Documents/Code/ZombieHuman2/src/city.cpp
+CMakeFiles/ZombieHuman.dir/src/city.cpp.obj: C:/Users/joyce/Documents/Code/C++/ZombieHuman2/src/city.cpp
 CMakeFiles/ZombieHuman.dir/src/city.cpp.obj: CMakeFiles/ZombieHuman.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\joyce\Documents\Code\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ZombieHuman.dir/src/city.cpp.obj"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZombieHuman.dir/src/city.cpp.obj -MF CMakeFiles\ZombieHuman.dir\src\city.cpp.obj.d -o CMakeFiles\ZombieHuman.dir\src\city.cpp.obj -c C:\Users\joyce\Documents\Code\ZombieHuman2\src\city.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\joyce\Documents\Code\C++\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ZombieHuman.dir/src/city.cpp.obj"
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZombieHuman.dir/src/city.cpp.obj -MF CMakeFiles\ZombieHuman.dir\src\city.cpp.obj.d -o CMakeFiles\ZombieHuman.dir\src\city.cpp.obj -c C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\city.cpp
 
 CMakeFiles/ZombieHuman.dir/src/city.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ZombieHuman.dir/src/city.cpp.i"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\joyce\Documents\Code\ZombieHuman2\src\city.cpp > CMakeFiles\ZombieHuman.dir\src\city.cpp.i
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\city.cpp > CMakeFiles\ZombieHuman.dir\src\city.cpp.i
 
 CMakeFiles/ZombieHuman.dir/src/city.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ZombieHuman.dir/src/city.cpp.s"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\joyce\Documents\Code\ZombieHuman2\src\city.cpp -o CMakeFiles\ZombieHuman.dir\src\city.cpp.s
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\city.cpp -o CMakeFiles\ZombieHuman.dir\src\city.cpp.s
 
 CMakeFiles/ZombieHuman.dir/src/human.cpp.obj: CMakeFiles/ZombieHuman.dir/flags.make
-CMakeFiles/ZombieHuman.dir/src/human.cpp.obj: C:/Users/joyce/Documents/Code/ZombieHuman2/src/human.cpp
+CMakeFiles/ZombieHuman.dir/src/human.cpp.obj: C:/Users/joyce/Documents/Code/C++/ZombieHuman2/src/human.cpp
 CMakeFiles/ZombieHuman.dir/src/human.cpp.obj: CMakeFiles/ZombieHuman.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\joyce\Documents\Code\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ZombieHuman.dir/src/human.cpp.obj"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZombieHuman.dir/src/human.cpp.obj -MF CMakeFiles\ZombieHuman.dir\src\human.cpp.obj.d -o CMakeFiles\ZombieHuman.dir\src\human.cpp.obj -c C:\Users\joyce\Documents\Code\ZombieHuman2\src\human.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\joyce\Documents\Code\C++\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ZombieHuman.dir/src/human.cpp.obj"
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZombieHuman.dir/src/human.cpp.obj -MF CMakeFiles\ZombieHuman.dir\src\human.cpp.obj.d -o CMakeFiles\ZombieHuman.dir\src\human.cpp.obj -c C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\human.cpp
 
 CMakeFiles/ZombieHuman.dir/src/human.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ZombieHuman.dir/src/human.cpp.i"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\joyce\Documents\Code\ZombieHuman2\src\human.cpp > CMakeFiles\ZombieHuman.dir\src\human.cpp.i
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\human.cpp > CMakeFiles\ZombieHuman.dir\src\human.cpp.i
 
 CMakeFiles/ZombieHuman.dir/src/human.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ZombieHuman.dir/src/human.cpp.s"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\joyce\Documents\Code\ZombieHuman2\src\human.cpp -o CMakeFiles\ZombieHuman.dir\src\human.cpp.s
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\human.cpp -o CMakeFiles\ZombieHuman.dir\src\human.cpp.s
 
 CMakeFiles/ZombieHuman.dir/src/organism.cpp.obj: CMakeFiles/ZombieHuman.dir/flags.make
-CMakeFiles/ZombieHuman.dir/src/organism.cpp.obj: C:/Users/joyce/Documents/Code/ZombieHuman2/src/organism.cpp
+CMakeFiles/ZombieHuman.dir/src/organism.cpp.obj: C:/Users/joyce/Documents/Code/C++/ZombieHuman2/src/organism.cpp
 CMakeFiles/ZombieHuman.dir/src/organism.cpp.obj: CMakeFiles/ZombieHuman.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\joyce\Documents\Code\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ZombieHuman.dir/src/organism.cpp.obj"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZombieHuman.dir/src/organism.cpp.obj -MF CMakeFiles\ZombieHuman.dir\src\organism.cpp.obj.d -o CMakeFiles\ZombieHuman.dir\src\organism.cpp.obj -c C:\Users\joyce\Documents\Code\ZombieHuman2\src\organism.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\joyce\Documents\Code\C++\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ZombieHuman.dir/src/organism.cpp.obj"
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZombieHuman.dir/src/organism.cpp.obj -MF CMakeFiles\ZombieHuman.dir\src\organism.cpp.obj.d -o CMakeFiles\ZombieHuman.dir\src\organism.cpp.obj -c C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\organism.cpp
 
 CMakeFiles/ZombieHuman.dir/src/organism.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ZombieHuman.dir/src/organism.cpp.i"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\joyce\Documents\Code\ZombieHuman2\src\organism.cpp > CMakeFiles\ZombieHuman.dir\src\organism.cpp.i
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\organism.cpp > CMakeFiles\ZombieHuman.dir\src\organism.cpp.i
 
 CMakeFiles/ZombieHuman.dir/src/organism.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ZombieHuman.dir/src/organism.cpp.s"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\joyce\Documents\Code\ZombieHuman2\src\organism.cpp -o CMakeFiles\ZombieHuman.dir\src\organism.cpp.s
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\organism.cpp -o CMakeFiles\ZombieHuman.dir\src\organism.cpp.s
 
 CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj: CMakeFiles/ZombieHuman.dir/flags.make
-CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj: C:/Users/joyce/Documents/Code/ZombieHuman2/src/zombie.cpp
+CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj: C:/Users/joyce/Documents/Code/C++/ZombieHuman2/src/zombie.cpp
 CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj: CMakeFiles/ZombieHuman.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\joyce\Documents\Code\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj -MF CMakeFiles\ZombieHuman.dir\src\zombie.cpp.obj.d -o CMakeFiles\ZombieHuman.dir\src\zombie.cpp.obj -c C:\Users\joyce\Documents\Code\ZombieHuman2\src\zombie.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\joyce\Documents\Code\C++\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj"
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ZombieHuman.dir/src/zombie.cpp.obj -MF CMakeFiles\ZombieHuman.dir\src\zombie.cpp.obj.d -o CMakeFiles\ZombieHuman.dir\src\zombie.cpp.obj -c C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\zombie.cpp
 
 CMakeFiles/ZombieHuman.dir/src/zombie.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ZombieHuman.dir/src/zombie.cpp.i"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\joyce\Documents\Code\ZombieHuman2\src\zombie.cpp > CMakeFiles\ZombieHuman.dir\src\zombie.cpp.i
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\zombie.cpp > CMakeFiles\ZombieHuman.dir\src\zombie.cpp.i
 
 CMakeFiles/ZombieHuman.dir/src/zombie.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ZombieHuman.dir/src/zombie.cpp.s"
-	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\joyce\Documents\Code\ZombieHuman2\src\zombie.cpp -o CMakeFiles\ZombieHuman.dir\src\zombie.cpp.s
+	C:\Users\joyce\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\223.8617.54\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\joyce\Documents\Code\C++\ZombieHuman2\src\zombie.cpp -o CMakeFiles\ZombieHuman.dir\src\zombie.cpp.s
 
 # Object files for target ZombieHuman
 ZombieHuman_OBJECTS = \
@@ -158,7 +158,7 @@ ZombieHuman.exe: CMakeFiles/ZombieHuman.dir/build.make
 ZombieHuman.exe: CMakeFiles/ZombieHuman.dir/linklibs.rsp
 ZombieHuman.exe: CMakeFiles/ZombieHuman.dir/objects1.rsp
 ZombieHuman.exe: CMakeFiles/ZombieHuman.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\joyce\Documents\Code\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ZombieHuman.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\joyce\Documents\Code\C++\ZombieHuman2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ZombieHuman.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ZombieHuman.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -170,6 +170,6 @@ CMakeFiles/ZombieHuman.dir/clean:
 .PHONY : CMakeFiles/ZombieHuman.dir/clean
 
 CMakeFiles/ZombieHuman.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\joyce\Documents\Code\ZombieHuman2 C:\Users\joyce\Documents\Code\ZombieHuman2 C:\Users\joyce\Documents\Code\ZombieHuman2\cmake-build-debug C:\Users\joyce\Documents\Code\ZombieHuman2\cmake-build-debug C:\Users\joyce\Documents\Code\ZombieHuman2\cmake-build-debug\CMakeFiles\ZombieHuman.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\joyce\Documents\Code\C++\ZombieHuman2 C:\Users\joyce\Documents\Code\C++\ZombieHuman2 C:\Users\joyce\Documents\Code\C++\ZombieHuman2\cmake-build-debug C:\Users\joyce\Documents\Code\C++\ZombieHuman2\cmake-build-debug C:\Users\joyce\Documents\Code\C++\ZombieHuman2\cmake-build-debug\CMakeFiles\ZombieHuman.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ZombieHuman.dir/depend
 

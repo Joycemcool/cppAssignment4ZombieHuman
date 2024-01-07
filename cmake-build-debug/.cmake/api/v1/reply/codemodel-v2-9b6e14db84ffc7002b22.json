@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug",
-		"source" : "C:/Users/joyce/Documents/Code/ZombieHuman2"
+		"build" : "C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug",
+		"source" : "C:/Users/joyce/Documents/Code/C++/ZombieHuman2"
 	},
 	"version" : 
 	{

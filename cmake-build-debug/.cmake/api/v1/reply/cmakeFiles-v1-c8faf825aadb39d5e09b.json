@@ -682,11 +682,6 @@
 		{
 			"isCMake" : true,
 			"isExternal" : true,
-			"path" : "C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-C-ABI.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
 			"path" : "C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/cmake/win/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake"
 		},
 		{
@@ -777,18 +772,13 @@
 		{
 			"isGenerated" : true,
 			"path" : "cmake-build-debug/CMakeFiles/3.24.2/CMakeCXXCompiler.cmake"
-		},
-		{
-			"isCMake" : true,
-			"isExternal" : true,
-			"path" : "C:/Users/joyce/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/cmake/win/x64/share/cmake-3.24/Modules/Platform/Windows-GNU-CXX-ABI.cmake"
 		}
 	],
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "C:/Users/joyce/Documents/Code/ZombieHuman2/cmake-build-debug",
-		"source" : "C:/Users/joyce/Documents/Code/ZombieHuman2"
+		"build" : "C:/Users/joyce/Documents/Code/C++/ZombieHuman2/cmake-build-debug",
+		"source" : "C:/Users/joyce/Documents/Code/C++/ZombieHuman2"
 	},
 	"version" : 
 	{

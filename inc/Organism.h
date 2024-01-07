@@ -18,10 +18,6 @@ class Zombie;
 class Organism
 {
 protected:
-//    int x;
-//    int y;
-//    int width;
-//    int height;
     City *city;
     int timeSteps;
     enum Direction { NORTH, NORTHEAST,EAST,SOUTHEAST, SOUTH,SOUTHWEST,WEST,NORTHWEST };
@@ -41,7 +37,6 @@ public:
     bool moved;
     enum Species {ZOMBIE, HUMAN, NUM_SPECIES};
     virtual bool isTurned()=0;
-//    virtual void removeStarved()=0;
     friend ostream& operator<<( ostream &output, Organism *organism );
 };
 

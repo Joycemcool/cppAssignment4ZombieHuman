@@ -1,22 +1,10 @@
 
 #include <iostream>
 #include <thread>
-#include <ctime>
-#include <ratio>
-#include <cstdlib>
 #include <chrono>
-#include <thread>
 
 #include "../inc/Organism.h"
-#include "../inc/City.h"
 using namespace std;
-
-//Helper Function
-void ClearScreen()
-{
-    cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-    cout<<"hello"<<endl;
-}
 
 int main() {
 
@@ -28,7 +16,6 @@ int main() {
     string gameRule2 = "Zombie starved: 3 time steps and not eaten human, convert to a human";
     string gameRule3 = "Zombie Breed : survives for eight time-steps, and after it has moved/eaten,breed a new zombie";
 
-
     cout << "Welcome to Zombie and Human World" << endl;
     cout<<line<<endl;
     cout<<gameRule1<<endl;
@@ -38,62 +25,33 @@ int main() {
 
     //INSTANTIALIZE NEW CITY
     City city;
-//    chrono:: milliseconds interval(200);
 
-    if(city.humanCount()>0&&city.zombieCount()>0){
+//2024-1-6 update HumanCount<=0 or ZombieCount<=0, gameOver == true;
+
         int gameCount=1;
         do{
             cout<<endl<<"!!New Generation!!This is generation  " <<gameCount<<endl;
             cout<<"Human count in this generation "<<city.humanCount()<<endl;
             cout<<"Zombie count in this generation "<<city.zombieCount()<<endl;
-//            cout<<"Before move"<<endl;
-            cout<<city<<endl;
 
             //New code
-//            city.move();
-
-            //New code
-//            gameCount++;
-
-            //New code
-//            this_thread::sleep_for(0.5s);
-//            if (gameCount * 0.5 < 15) {
-//                // continue playing if the timer condition is not met
-//                gameOver = false;
-//            } else {
-//                // exit if the timer condition is met
-//                gameOver = true;
-//            }
-
-            //Above auto update
-
-            cout << "Enter [n] to see the next generation : Any other key to exit" << endl;
-            cin >> userInput;
-            if (userInput == "n") {
-                //continue playing if user enters n
-                gameOver = false;
-            }
-            else {
-                //exit if user does not enter n
-                gameOver = true;
-            }
             city.move();
-            cout<<"After move"<<endl;
+
+            //New code
+            this_thread::sleep_for(0.5s);
+
             cout<<city;
+
             gameCount++;
 
-        }while(!gameOver);
-    } else{
-        cout<<"Game over"<<endl;
-    }
+//            Either organism disappears marks end of the game
+            if(city.humanCount()<=0||city.zombieCount()<=0) gameOver= true;
 
-    //chrono::seconds interval( 1 ) ; // 1 second
-   // this_thread::sleep_for( interval ) ;
+        }while(!gameOver);
 
     return 0;
 
 }
-
 
 
 
